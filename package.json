@@ -2,15 +2,24 @@
   "name": "aurelian",
   "version": "1.0.0",
   "description": "restitutor orbis",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --mode=development --watch"
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkevinbai/Aurelian.git"
   },
   "author": "kevin bai",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zkevinbai/Aurelian/issues"
+  },
+  "homepage": "https://github.com/zkevinbai/Aurelian#readme",
   "dependencies": {
-    "cli": "^1.0.1",
-    "webpack": "^4.29.6"
+    "lodash": "^4.17.11",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
