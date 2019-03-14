@@ -46213,21 +46213,21 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _sankey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sankey */ "./src/sankey.js");
+/* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  Object(_sankey__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])();
 });
 
 /***/ }),
 
-/***/ "./src/sankey.js":
-/*!***********************!*\
-  !*** ./src/sankey.js ***!
-  \***********************/
+/***/ "./src/visualization.js":
+/*!******************************!*\
+  !*** ./src/visualization.js ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -46235,28 +46235,9 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 
-console.log("hello"); // var data = [30, 86, 168, 281, 303, 365];
-// d3.select(".chart")
-//     .selectAll("div")
-//     .data(data)
-//     .enter()
-//     .append("div")
-//     .style("width", function (d) { return d + "px"; })
-//     .text(function (d) { return d; });
+console.log("hello");
 
-var sankey = function sankey() {
-  var data = [80, 100, 56, 120, 180, 30, 40, 120, 160];
-  var svgWidth = 500,
-      svgHeight = 300;
-  var svg = d3__WEBPACK_IMPORTED_MODULE_0__["select"]('svg').attr("width", svgWidth).attr("height", svgHeight);
-  var xScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().domain([0, d3__WEBPACK_IMPORTED_MODULE_0__["max"](data)]).range([0, svgWidth]);
-  var yScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]().domain([0, d3__WEBPACK_IMPORTED_MODULE_0__["max"](data)]).range([svgHeight, 0]);
-  var x_axis = d3__WEBPACK_IMPORTED_MODULE_0__["axisBottom"]().scale(xScale);
-  var y_axis = d3__WEBPACK_IMPORTED_MODULE_0__["axisLeft"]().scale(yScale);
-  svg.append("g").attr("transform", "translate(50, 10)").call(y_axis);
-  var xAxisTranslate = svgHeight - 20;
-  svg.append("g").attr("transform", "translate(50, " + xAxisTranslate + ")").call(x_axis);
-};
+var sankey = function sankey() {};
 
 /* harmony default export */ __webpack_exports__["default"] = (sankey);
 

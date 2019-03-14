@@ -1,4 +1,4 @@
-import sankey from './sankey';
+import sankey from './visualization';
 import _ from 'lodash';
 
 document.addEventListener("DOMContentLoaded", ()=>{
