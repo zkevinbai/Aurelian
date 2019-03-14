@@ -4,7 +4,8 @@
   "description": "restitutor orbis",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch"
   },
   "author": "kevin bai",
   "license": "ISC",
