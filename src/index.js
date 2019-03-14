@@ -1,7 +1,6 @@
-import sankey from './visualization';
-import _ from 'lodash';
+import visualization from './visualization';
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    sankey();
+    visualization()
 })
 
