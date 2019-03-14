@@ -1,12 +1,7 @@
+import sankey from './sankey';
 import _ from 'lodash';
 
-function component() {
-    let element = document.createElement('div');
+document.addEventListener("DOMContentLoaded", ()=>{
+    sankey();
+})
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-
-    return element;
-}
-
-document.body.appendChild(component());
