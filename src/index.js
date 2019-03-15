@@ -1,6 +1,111 @@
 import visualization from './visualization';
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    visualization()
+    const object = getDataObject();
+    const url = getUrlFromObject(object);
+    console.log(url);
+
+    visualization(url)
 })
 
+function getUrlFromObject(object) {
+    var jsonse = JSON.stringify(object);
+    var blob = new Blob([jsonse], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    return url;
+}
+
+function getDataObject(){
+    return {
+        "nodes": [
+            {
+                "node": 0,
+                "name": "Salary"
+            },
+            {
+                "node": 1,
+                "name": "Investment Return"
+            },
+            {
+                "node": 2,
+                "name": "Income"
+            },
+            {
+                "node": 3,
+                "name": "Savings"
+            },
+            {
+                "node": 4,
+                "name": "Investments"
+            },
+            {
+                "node": 5,
+                "name": "Expenses"
+            },
+            {
+                "node": 6,
+                "name": "Taxes"
+            },
+            {
+                "node": 7,
+                "name": "Saved"
+            },
+            {
+                "node": 8,
+                "name": "Spent"
+            }
+        ],
+        "links": [
+            {
+                "source": 0,
+                "target": 2,
+                "value": 75000
+            },
+            {
+                "source": 1,
+                "target": 2,
+                "value": 5000
+            },
+            {
+                "source": 2,
+                "target": 3,
+                "value": 12000
+            },
+            {
+                "source": 2,
+                "target": 4,
+                "value": 4000
+            },
+            {
+                "source": 2,
+                "target": 5,
+                "value": 36000
+            },
+            {
+                "source": 2,
+                "target": 6,
+                "value": 28000
+            },
+            {
+                "source": 3,
+                "target": 7,
+                "value": 12000
+            },
+            {
+                "source": 4,
+                "target": 7,
+                "value": 4000
+            },
+            {
+                "source": 5,
+                "target": 8,
+                "value": 36000
+            },
+            {
+                "source": 6,
+                "target": 8,
+                "value": 28000
+            }    
+        ]
+    }
+}
