@@ -90,14 +90,28 @@
 /*!******************************!*\
   !*** ./src/dataGenerator.js ***!
   \******************************/
-/*! exports provided: defaultData */
+/*! exports provided: defaultData, dataMaker */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultData", function() { return defaultData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataMaker", function() { return dataMaker; });
 var defaultData = function defaultData() {
   return [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
+}; // let salaryIncome = 75000;
+// let investmentReturnIncome = 5000;
+// let incomeSavings = 12000;
+// let incomeInvestments = 4000;
+// let incomeExpenses = 36000;
+// let incomeTaxes = 28000;
+// let savingsSaved = 12000;
+// let investmentsSaved = 4000;
+// let expensesSpent = 36000;
+// let taxesSpent = 28000;
+
+var dataMaker = function dataMaker(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent) {
+  return [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent];
 };
 
 /***/ }),
@@ -115,21 +129,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dataGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dataGenerator */ "./src/dataGenerator.js");
 /* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
 /* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var data = Object(_dataGenerator__WEBPACK_IMPORTED_MODULE_1__["defaultData"])();
-  var object = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, _toConsumableArray(data));
+  // const data = defaultData();
+  var defaultData = [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
+  var object = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, defaultData);
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(object);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
