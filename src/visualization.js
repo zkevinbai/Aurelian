@@ -68,7 +68,6 @@ const strokeColor = [
 // load the data
 // d3.json('./src/data/data.json', function (error, graph) {
 d3.json(url, function (error, graph) {
-// d3.json('./src/data/sankeyData.json', function (error, graph) {
     var nodeMap = {};
     graph.nodes.forEach(function (x) { nodeMap[x.name] = x; });
     graph.links = graph.links.map(function (x) {
