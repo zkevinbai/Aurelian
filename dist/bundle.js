@@ -146,21 +146,7 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // const data = defaultData();
-  // const defaultData =[
-  //     75000,
-  //     5000,
-  //     12000,
-  //     4000,
-  //     36000,
-  //     28000,
-  //     12000,
-  //     4000,
-  //     36000,
-  //     28000,
-  // ];
-  // const object=objectMaker(...defaultData);
-  // const url = urlMaker(object);
+  // v3 input data array
   var defaultInputData = [75000, 5000, 12000, 4000, 36000, 28000];
   var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_1__["dataParser"].apply(void 0, defaultInputData);
   var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, _toConsumableArray(inputData));
