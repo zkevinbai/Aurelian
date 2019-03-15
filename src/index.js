@@ -26,10 +26,12 @@ function getDataObject(){
                 "node": 1,
                 "name": "Investment Return"
             },
-            {
-                "node": 2,
-                "name": "Income"
-            },
+
+                {
+                    "node": 2,
+                    "name": "Income"
+                },
+
             {
                 "node": 3,
                 "name": "Savings"
@@ -46,66 +48,69 @@ function getDataObject(){
                 "node": 6,
                 "name": "Taxes"
             },
-            {
-                "node": 7,
-                "name": "Saved"
-            },
-            {
-                "node": 8,
-                "name": "Spent"
-            }
+
+                {
+                    "node": 7,
+                    "name": "Saved"
+                },
+                {
+                    "node": 8,
+                    "name": "Spent"
+                }
         ],
         "links": [
             {
-                "source": 0,
-                "target": 2,
+                "source": "Salary",
+                "target": "Income",
                 "value": 75000
             },
             {
-                "source": 1,
-                "target": 2,
+                "source": "Investment Return",
+                "target": "Income",
                 "value": 5000
             },
+
+                {
+                    "source": "Income",
+                    "target": "Savings",
+                    "value": 12000
+                },
+                {
+                    "source": "Income",
+                    "target": "Investments",
+                    "value": 4000
+                },
+                {
+                    "source": "Income",
+                    "target": "Expenses",
+                    "value": 36000
+                },
+                {
+                    "source": "Income",
+                    "target": "Taxes",
+                    "value": 28000
+                },
+
             {
-                "source": 2,
-                "target": 3,
+                "source": "Savings",
+                "target": "Saved",
                 "value": 12000
             },
             {
-                "source": 2,
-                "target": 4,
+                "source": "Investments",
+                "target": "Saved",
                 "value": 4000
             },
             {
-                "source": 2,
-                "target": 5,
+                "source": "Expenses",
+                "target": "Spent",
                 "value": 36000
             },
             {
-                "source": 2,
-                "target": 6,
+                "source": "Taxes",
+                "target": "Spent",
                 "value": 28000
-            },
-            {
-                "source": 3,
-                "target": 7,
-                "value": 12000
-            },
-            {
-                "source": 4,
-                "target": 7,
-                "value": 4000
-            },
-            {
-                "source": 5,
-                "target": 8,
-                "value": 36000
-            },
-            {
-                "source": 6,
-                "target": 8,
-                "value": 28000
-            }    
+            }
         ]
     }
 }

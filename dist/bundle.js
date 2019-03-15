@@ -144,44 +144,44 @@ function getDataObject() {
       "name": "Spent"
     }],
     "links": [{
-      "source": 0,
-      "target": 2,
+      "source": "Salary",
+      "target": "Income",
       "value": 75000
     }, {
-      "source": 1,
-      "target": 2,
+      "source": "Investment Return",
+      "target": "Income",
       "value": 5000
     }, {
-      "source": 2,
-      "target": 3,
+      "source": "Income",
+      "target": "Savings",
       "value": 12000
     }, {
-      "source": 2,
-      "target": 4,
+      "source": "Income",
+      "target": "Investments",
       "value": 4000
     }, {
-      "source": 2,
-      "target": 5,
+      "source": "Income",
+      "target": "Expenses",
       "value": 36000
     }, {
-      "source": 2,
-      "target": 6,
+      "source": "Income",
+      "target": "Taxes",
       "value": 28000
     }, {
-      "source": 3,
-      "target": 7,
+      "source": "Savings",
+      "target": "Saved",
       "value": 12000
     }, {
-      "source": 4,
-      "target": 7,
+      "source": "Investments",
+      "target": "Saved",
       "value": 4000
     }, {
-      "source": 5,
-      "target": 8,
+      "source": "Expenses",
+      "target": "Spent",
       "value": 36000
     }, {
-      "source": 6,
-      "target": 8,
+      "source": "Taxes",
+      "target": "Spent",
       "value": 28000
     }]
   };
