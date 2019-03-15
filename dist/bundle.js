@@ -124,8 +124,8 @@ var d3 = window.d3;
     left: 10
   },
       width = 700 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom; // width = 1200 - margin.left - margin.right,
-  // height = 500 - margin.top - margin.bottom;
+      height = 300 - margin.top - margin.bottom; // width = 1400 - margin.left - margin.right,
+  // height = 700 - margin.top - margin.bottom;
   // format variables
 
   var color = d3.scaleOrdinal().range(["rgba(45, 165, 239, 0.75)", "rgba(78, 244, 242, 0.75)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(239, 43, 49)"]);
@@ -138,7 +138,9 @@ var d3 = window.d3;
       color; // append the svg object to the body of the page
 
 
-  var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // Set the sankey diagram properties
+  var svg = d3.select(".visualization").append("svg").attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", "0 0 700 350") // .attr("width", width + margin.left + margin.right)
+  // .attr("height", height + margin.top + margin.bottom)
+  .classed("inner-svg", true).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // Set the sankey diagram properties
 
   var sankey = d3.sankey().nodeWidth(36).nodePadding(40).size([width, height]);
   var path = sankey.link();

@@ -10,8 +10,8 @@ var units = "dollars";
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
-    // width = 1200 - margin.left - margin.right,
-    // height = 500 - margin.top - margin.bottom;
+    // width = 1400 - margin.left - margin.right,
+    // height = 700 - margin.top - margin.bottom;
 
 // format variables
 var color = d3.scaleOrdinal().range([
@@ -33,9 +33,12 @@ var formatNumber = d3.format(",.0f"),    // zero decimal places
     color;
 
 // append the svg object to the body of the page
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+var svg = d3.select(".visualization").append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 700 350")
+    // .attr("width", width + margin.left + margin.right)
+    // .attr("height", height + margin.top + margin.bottom)
+    .classed("inner-svg", true)
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
