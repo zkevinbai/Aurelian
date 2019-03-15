@@ -90,13 +90,14 @@
 /*!******************************!*\
   !*** ./src/dataGenerator.js ***!
   \******************************/
-/*! exports provided: defaultData, dataMaker */
+/*! exports provided: defaultData, dataMaker, dataParser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultData", function() { return defaultData; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataMaker", function() { return dataMaker; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataParser", function() { return dataParser; });
 var defaultData = function defaultData() {
   return [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
 }; // let salaryIncome = 75000;
@@ -112,6 +113,9 @@ var defaultData = function defaultData() {
 
 var dataMaker = function dataMaker(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent) {
   return [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent];
+};
+var dataParser = function dataParser(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes) {
+  return [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
 };
 
 /***/ }),
@@ -129,15 +133,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dataGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dataGenerator */ "./src/dataGenerator.js");
 /* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
 /* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
   // const data = defaultData();
-  var defaultData = [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
-  var object = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, defaultData);
-  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(object);
+  // const defaultData =[
+  //     75000,
+  //     5000,
+  //     12000,
+  //     4000,
+  //     36000,
+  //     28000,
+  //     12000,
+  //     4000,
+  //     36000,
+  //     28000,
+  // ];
+  // const object=objectMaker(...defaultData);
+  // const url = urlMaker(object);
+  var defaultInputData = [75000, 5000, 12000, 4000, 36000, 28000];
+  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_1__["dataParser"].apply(void 0, defaultInputData);
+  var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, _toConsumableArray(inputData));
+  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(inputObject);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
 
