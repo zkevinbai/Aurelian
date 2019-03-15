@@ -124,7 +124,9 @@ var d3 = window.d3;
     left: 10
   },
       width = 700 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom; // format variables
+      height = 300 - margin.top - margin.bottom; // width = 1200 - margin.left - margin.right,
+  // height = 500 - margin.top - margin.bottom;
+  // format variables
 
   var color = d3.scaleOrdinal().range(["rgba(45, 165, 239, 0.75)", "rgba(78, 244, 242, 0.75)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(239, 43, 49)"]);
 
