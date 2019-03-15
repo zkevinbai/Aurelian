@@ -86,6 +86,22 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dataGenerator.js":
+/*!******************************!*\
+  !*** ./src/dataGenerator.js ***!
+  \******************************/
+/*! exports provided: defaultData */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultData", function() { return defaultData; });
+var defaultData = function defaultData() {
+  return [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
+};
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -96,24 +112,25 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
-/* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
-/* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
+/* harmony import */ var _dataGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dataGenerator */ "./src/dataGenerator.js");
+/* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
+/* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var salaryIncome = 75000;
-  var investmentReturnIncome = 5000;
-  var incomeSavings = 12000;
-  var incomeInvestments = 4000;
-  var incomeExpenses = 36000;
-  var incomeTaxes = 28000;
-  var savingsSaved = 12000;
-  var investmentsSaved = 4000;
-  var expensesSpent = 36000;
-  var taxesSpent = 28000;
-  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent);
-  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
+  var data = Object(_dataGenerator__WEBPACK_IMPORTED_MODULE_1__["defaultData"])();
+  var object = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, _toConsumableArray(data));
+  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(object);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
 
