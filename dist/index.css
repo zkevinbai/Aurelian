@@ -65,11 +65,16 @@ footer{
 /* -------------------------------------------------------- CONSTRUCTION TAGS */
 
 /* VISUALIZATON ------------------------------------------------------------- */
+svg{
+  background: rgba(255,255,255,1);
+}
+
 .node rect {
   cursor: move;
   fill-opacity: .9;
   shape-rendering: crispEdges;
 }
+
 .node text {
   pointer-events: none;
   /* text-shadow: 0 1px 0 #fff; */
@@ -82,6 +87,7 @@ footer{
   /* stroke: #000; */
   stroke-opacity: .36;
 }
+
 .link:hover {
   stroke-opacity: .72;
 }
