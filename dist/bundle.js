@@ -29072,53 +29072,12 @@ var dataParser = function dataParser(salaryIncome, investmentReturnIncome, incom
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
-/* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
-/* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
-/* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
-/* harmony import */ var _dataGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dataGenerator */ "./src/dataGenerator.js");
-/* harmony import */ var _util_eventUtil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/eventUtil */ "./src/util/eventUtil.js");
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-
-
-
-
-
+/* harmony import */ var _util_eventUtil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/eventUtil */ "./src/util/eventUtil.js");
 
 document.addEventListener("DOMContentLoaded", function () {
-  var salaryIncome = document.getElementById("salary").value;
-  var investmentReturnIncome = document.getElementById("investment-return").value;
-  var incomeSavings = document.getElementById("savings").value;
-  var incomeInvestments = document.getElementById("investments").value;
-  var incomeExpenses = document.getElementById("expenses").value;
-  var incomeTaxes = document.getElementById("taxes").value;
-  var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
-  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_4__["dataParser"].apply(void 0, userInput);
-  var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
-  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
-  Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
-  document.getElementById("user-input").addEventListener("ValueChange", function () {
-    d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
-    var salaryIncome = document.getElementById("salary").value;
-    var investmentReturnIncome = document.getElementById("investment-return").value;
-    var incomeSavings = document.getElementById("savings").value;
-    var incomeInvestments = document.getElementById("investments").value;
-    var incomeExpenses = document.getElementById("expenses").value;
-    var incomeTaxes = document.getElementById("taxes").value;
-    var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
-    var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_4__["dataParser"].apply(void 0, userInput);
-    var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
-    var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
-    Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
-  });
-  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_5__["formReset"])();
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["renderVisualization"])();
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formInputChange"])();
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formReset"])();
 });
 
 /***/ }),
@@ -29236,11 +29195,13 @@ function getUrlFromObject(object) {
 /*!*******************************!*\
   !*** ./src/util/eventUtil.js ***!
   \*******************************/
-/*! exports provided: formReset */
+/*! exports provided: renderVisualization, formInputChange, formReset */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderVisualization", function() { return renderVisualization; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formInputChange", function() { return formInputChange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formReset", function() { return formReset; });
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../visualization */ "./src/visualization.js");
@@ -29260,22 +29221,48 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
-var formReset = function formReset() {
-  document.getElementById("user-input").addEventListener("reset", function () {
-    d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
-    var salaryIncome = document.getElementById("salary").value;
-    var investmentReturnIncome = document.getElementById("investment-return").value;
-    var incomeSavings = document.getElementById("savings").value;
-    var incomeInvestments = document.getElementById("investments").value;
-    var incomeExpenses = document.getElementById("expenses").value;
-    var incomeTaxes = document.getElementById("taxes").value;
-    var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
-    var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_4__["dataParser"].apply(void 0, userInput);
-    var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
-    var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
-    Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
-  });
+var renderVisualization = function renderVisualization() {
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
+  var salaryIncome = document.getElementById("salary").value;
+  var investmentReturnIncome = document.getElementById("investment-return").value;
+  var incomeSavings = document.getElementById("savings").value;
+  var incomeInvestments = document.getElementById("investments").value;
+  var incomeExpenses = document.getElementById("expenses").value;
+  var incomeTaxes = document.getElementById("taxes").value;
+  var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
+  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_4__["dataParser"].apply(void 0, userInput);
+  var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
+  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
+  Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
 };
+var formInputChange = function formInputChange() {
+  document.getElementById("user-input").addEventListener("keyup", renderVisualization);
+};
+var formReset = function formReset() {
+  document.getElementById("user-input").addEventListener("reset", renderVisualization);
+}; // export const formReset = () =>{
+//     document.getElementById("user-input").addEventListener("reset", () => {
+//         d3.select("svg").remove();
+//         let salaryIncome = document.getElementById("salary").value;
+//         let investmentReturnIncome = document.getElementById("investment-return").value;
+//         let incomeSavings = document.getElementById("savings").value;
+//         let incomeInvestments = document.getElementById("investments").value;
+//         let incomeExpenses = document.getElementById("expenses").value;
+//         let incomeTaxes = document.getElementById("taxes").value;
+//         let userInput = [
+//             salaryIncome,
+//             investmentReturnIncome,
+//             incomeSavings,
+//             incomeInvestments,
+//             incomeExpenses,
+//             incomeTaxes,
+//         ];
+//         let inputData = dataParser(...userInput);
+//         let inputObject = objectMaker(...inputData);
+//         let url = urlMaker(inputObject);
+//         visualization(url)
+//     })
+// }
 
 /***/ }),
 
