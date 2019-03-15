@@ -102,17 +102,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  var salaryIncome = 0;
-  var investmentReturnIncome = 0;
-  var incomeExpenses = 0;
-  var incomeTaxes = 0;
-  var incomeSavings = 0;
-  var incomeInvestments = 0;
-  var expensesSpent = 0;
-  var taxesSpent = 0;
-  var savingsSaved = 0;
-  var investmentsSaved = 0;
-  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  var salaryIncome = 75000;
+  var investmentReturnIncome = 5000;
+  var incomeSavings = 12000;
+  var incomeInvestments = 4000;
+  var incomeExpenses = 36000;
+  var incomeTaxes = 28000;
+  var savingsSaved = 12000;
+  var investmentsSaved = 4000;
+  var expensesSpent = 36000;
+  var taxesSpent = 28000;
+  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved);
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (getObjectFromData);
 
-function getObjectFromData(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved) {
+function getObjectFromData(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent) {
   return {
     "nodes": [{
       "node": 0,

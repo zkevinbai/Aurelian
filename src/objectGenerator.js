@@ -3,14 +3,16 @@ export default getObjectFromData;
 function getObjectFromData(
     salaryIncome,
     investmentReturnIncome,
-    incomeExpenses,
-    incomeTaxes,
+
     incomeSavings,
     incomeInvestments,
+    incomeExpenses,
+    incomeTaxes,
+
+    savingsSaved,
+    investmentsSaved,
     expensesSpent,
     taxesSpent,
-    savingsSaved,
-    investmentsSaved
 ) {
     return {
         "nodes": [
