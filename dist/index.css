@@ -1,3 +1,10 @@
+/* IMPORTS ------------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css?family=Caveat|Lobster|Roboto:100,300,400,500,700,900');
+
+/* ------------------------------------------------------------------ IMPORTS */
+
+
 /* RESET -------------------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,14 +72,17 @@ footer{
 }
 .node text {
   pointer-events: none;
-  text-shadow: 0 1px 0 #fff;
+  /* text-shadow: 0 1px 0 #fff; */
+  font-family: 'Roboto';
+  font-weight: 500;
 }
+
 .link {
   fill: none;
   /* stroke: #000; */
-  stroke-opacity: .35;
+  stroke-opacity: .36;
 }
 .link:hover {
-  stroke-opacity: .75;
+  stroke-opacity: .72;
 }
 /* ------------------------------------------------------------- VISUALIZATON */
