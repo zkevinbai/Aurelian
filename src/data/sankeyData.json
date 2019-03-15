@@ -6,9 +6,11 @@
         {
             "name": "Investment Return"
         },
-        {
-            "name": "Income"
-        },
+
+            {
+                "name": "Income"
+            },
+
         {
             "name": "Savings"
         },
@@ -21,12 +23,13 @@
         {
             "name": "Taxes"
         },
-        {
-            "name": "Saved"
-        },
-        {
-            "name": "Spent"
-        }
+
+            {
+                "name": "Saved"
+            },
+            {
+                "name": "Spent"
+            }
     ],
     "links": [
         {
@@ -39,26 +42,28 @@
             "target": "Income",
             "value": 5000
         },
-        {
-            "source": "Income",
-            "target": "Savings",
-            "value": 12000
-        },
-        {
-            "source": "Income",
-            "target": "Investments",
-            "value": 4000
-        },
-        {
-            "source": "Income",
-            "target": "Expenses",
-            "value": 36000
-        },
-        {
-            "source": "Income",
-            "target": "Taxes",
-            "value": 28000
-        },
+
+            {
+                "source": "Income",
+                "target": "Savings",
+                "value": 12000
+            },
+            {
+                "source": "Income",
+                "target": "Investments",
+                "value": 4000
+            },
+            {
+                "source": "Income",
+                "target": "Expenses",
+                "value": 36000
+            },
+            {
+                "source": "Income",
+                "target": "Taxes",
+                "value": 28000
+            },
+
         {
             "source": "Savings",
             "target": "Saved",
