@@ -1,14 +1,11 @@
+import * as d3 from 'd3';
 import visualization from './visualization';
-import {
-    defaultData, 
-    dataMaker, 
-    dataParser
-} from './dataGenerator';
-import objectMaker from './objectGenerator';
 import urlMaker from './urlGenerator';
+import objectMaker from './objectGenerator';
+import { dataParser } from './dataGenerator';
+import { formReset } from './util/eventUtil';
 
 document.addEventListener("DOMContentLoaded", ()=>{   
-    
     let salaryIncome = document.getElementById("salary").value;
     let investmentReturnIncome = document.getElementById("investment-return").value;
     let incomeSavings = document.getElementById("savings").value;
@@ -16,7 +13,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let incomeExpenses = document.getElementById("expenses").value;
     let incomeTaxes = document.getElementById("taxes").value;
 
-    const userInput =[
+    let userInput =[
         salaryIncome,
         investmentReturnIncome,
         incomeSavings,
@@ -24,30 +21,33 @@ document.addEventListener("DOMContentLoaded", ()=>{
         incomeExpenses,
         incomeTaxes,
     ];
-    const inputData = dataParser(...userInput);
-    const inputObject = objectMaker(...inputData);
-    const url = urlMaker(inputObject);
+    let inputData = dataParser(...userInput);
+    let inputObject = objectMaker(...inputData);
+    let url = urlMaker(inputObject);
     visualization(url)
+
+    document.getElementById("user-input").addEventListener("keydown", () => {
+        d3.select("svg").remove();
+        let salaryIncome = document.getElementById("salary").value;
+        let investmentReturnIncome = document.getElementById("investment-return").value;
+        let incomeSavings = document.getElementById("savings").value;
+        let incomeInvestments = document.getElementById("investments").value;
+        let incomeExpenses = document.getElementById("expenses").value;
+        let incomeTaxes = document.getElementById("taxes").value;
+        let userInput = [
+            salaryIncome,
+            investmentReturnIncome,
+            incomeSavings,
+            incomeInvestments,
+            incomeExpenses,
+            incomeTaxes,
+        ];
+        let inputData = dataParser(...userInput);
+        let inputObject = objectMaker(...inputData);
+        let url = urlMaker(inputObject);
+        visualization(url)
+    })
+
+    formReset()
 })
 
-// document.addEventListener("change"), () => {
-//     let salaryIncome = document.getElementById("salary").value;
-//     let investmentReturnIncome = document.getElementById("investment-return").value;
-//     let incomeSavings = document.getElementById("savings").value;
-//     let incomeInvestments = document.getElementById("investments").value;
-//     let incomeExpenses = document.getElementById("expenses").value;
-//     let incomeTaxes = document.getElementById("taxes").value;
-
-//     const userInput = [
-//         salaryIncome,
-//         investmentReturnIncome,
-//         incomeSavings,
-//         incomeInvestments,
-//         incomeExpenses,
-//         incomeTaxes,
-//     ];
-//     const inputData = dataParser(...userInput);
-//     const inputObject = objectMaker(...inputData);
-//     const url = urlMaker(inputObject);
-//     visualization(url)
-// }
