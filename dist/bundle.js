@@ -102,6 +102,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", function () {
+  var salaryIncome = 0;
+  var investmentReturnIncome = 0;
+  var incomeExpenses = 0;
+  var incomeTaxes = 0;
+  var incomeSavings = 0;
+  var incomeInvestments = 0;
+  var expensesSpent = 0;
+  var taxesSpent = 0;
+  var savingsSaved = 0;
+  var investmentsSaved = 0;
   var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])();
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
@@ -118,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (genDataObject);
+/* harmony default export */ __webpack_exports__["default"] = (getObjectFromData);
 
-function genDataObject(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved) {
+function getObjectFromData(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved) {
   return {
     "nodes": [{
       "node": 0,
@@ -153,43 +163,43 @@ function genDataObject(salaryIncome, investmentReturnIncome, incomeExpenses, inc
     "links": [{
       "source": "Salary",
       "target": "Income",
-      "value": 75000
+      "value": salaryIncome
     }, {
       "source": "Investment Return",
       "target": "Income",
-      "value": 5000
+      "value": investmentReturnIncome
     }, {
       "source": "Income",
       "target": "Savings",
-      "value": 12000
+      "value": incomeSavings
     }, {
       "source": "Income",
       "target": "Investments",
-      "value": 4000
+      "value": incomeInvestments
     }, {
       "source": "Income",
       "target": "Expenses",
-      "value": 36000
+      "value": incomeExpenses
     }, {
       "source": "Income",
       "target": "Taxes",
-      "value": 28000
+      "value": incomeTaxes
     }, {
       "source": "Savings",
       "target": "Saved",
-      "value": 12000
+      "value": savingsSaved
     }, {
       "source": "Investments",
       "target": "Saved",
-      "value": 4000
+      "value": investmentsSaved
     }, {
       "source": "Expenses",
       "target": "Spent",
-      "value": 36000
+      "value": expensesSpent
     }, {
       "source": "Taxes",
       "target": "Spent",
-      "value": 28000
+      "value": taxesSpent
     }]
   };
 }

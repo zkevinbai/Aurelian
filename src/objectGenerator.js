@@ -1,6 +1,6 @@
-export default genDataObject;
+export default getObjectFromData;
 
-function genDataObject(
+function getObjectFromData(
     salaryIncome,
     investmentReturnIncome,
     incomeExpenses,
@@ -58,54 +58,54 @@ function genDataObject(
             {
                 "source": "Salary",
                 "target": "Income",
-                "value": 75000
+                "value": salaryIncome
             },
             {
                 "source": "Investment Return",
                 "target": "Income",
-                "value": 5000
+                "value": investmentReturnIncome
             },
 
             {
                 "source": "Income",
                 "target": "Savings",
-                "value": 12000
+                "value": incomeSavings
             },
             {
                 "source": "Income",
                 "target": "Investments",
-                "value": 4000
+                "value": incomeInvestments
             },
             {
                 "source": "Income",
                 "target": "Expenses",
-                "value": 36000
+                "value": incomeExpenses
             },
             {
                 "source": "Income",
                 "target": "Taxes",
-                "value": 28000
+                "value": incomeTaxes
             },
 
             {
                 "source": "Savings",
                 "target": "Saved",
-                "value": 12000
+                "value": savingsSaved
             },
             {
                 "source": "Investments",
                 "target": "Saved",
-                "value": 4000
+                "value": investmentsSaved
             },
             {
                 "source": "Expenses",
                 "target": "Spent",
-                "value": 36000
+                "value": expensesSpent
             },
             {
                 "source": "Taxes",
                 "target": "Spent",
-                "value": 28000
+                "value": taxesSpent
             }
         ]
     }
