@@ -69,10 +69,10 @@ footer{
 }
 .link {
   fill: none;
-  stroke: #000;
-  stroke-opacity: .2;
+  /* stroke: #000; */
+  stroke-opacity: .35;
 }
 .link:hover {
-  stroke-opacity: .5;
+  stroke-opacity: .75;
 }
 /* ------------------------------------------------------------- VISUALIZATON */

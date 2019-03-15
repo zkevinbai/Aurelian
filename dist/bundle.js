@@ -139,13 +139,16 @@ var d3 = window.d3;
   var svg = d3.select("body").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"); // Set the sankey diagram properties
 
   var sankey = d3.sankey().nodeWidth(36).nodePadding(40).size([width, height]);
-  var path = sankey.link(); // load the data
+  var path = sankey.link();
+  var strokeColor = ["rgb(37, 90, 234)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(33, 237, 97)", "rgb(239, 43, 49)", "rgb(239, 43, 49)"]; // load the data
 
   d3.json('./src/data/data.json', function (error, graph) {
     sankey.nodes(graph.nodes).links(graph.links).layout(32); // add in the links
 
     var link = svg.append("g").selectAll(".link").data(graph.links).enter().append("path").attr("class", "link").attr("d", path).style("stroke-width", function (d) {
       return Math.max(1, d.dy);
+    }).style("stroke", function (d, i) {
+      return d.color = strokeColor[i];
     }).sort(function (a, b) {
       return b.dy - a.dy;
     }); // add the link titles

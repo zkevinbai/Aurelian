@@ -15,11 +15,14 @@ var margin = { top: 10, right: 10, bottom: 10, left: 10 },
 var color = d3.scaleOrdinal().range([
     "rgba(45, 165, 239, 0.75)", 
     "rgba(78, 244, 242, 0.75)",
+
     "rgb(37, 90, 234)",
+
     "rgba(45, 165, 239, 1)",
     "rgba(78, 244, 242, 1)",
     "rgb(239, 237, 91)",
     "rgb(247, 168, 236)",
+
     "rgb(33, 237, 97)",
     "rgb(239, 43, 49)"
 ]);
@@ -42,12 +45,28 @@ var sankey = d3.sankey()
     .size([width, height]);
 var path = sankey.link();
 
+const strokeColor = [
+        "rgb(37, 90, 234)",
+        "rgb(37, 90, 234)",
+
+        "rgba(45, 165, 239, 1)",
+        "rgba(78, 244, 242, 1)",
+        "rgb(239, 237, 91)",
+        "rgb(247, 168, 236)",
+
+        "rgb(33, 237, 97)",
+        "rgb(33, 237, 97)",
+        "rgb(239, 43, 49)",
+        "rgb(239, 43, 49)",
+    ];
+
 // load the data
 d3.json('./src/data/data.json', function (error, graph) {
     sankey
         .nodes(graph.nodes)
         .links(graph.links)
         .layout(32);
+        
     // add in the links
     var link = svg.append("g").selectAll(".link")
         .data(graph.links)
@@ -55,13 +74,18 @@ d3.json('./src/data/data.json', function (error, graph) {
         .attr("class", "link")
         .attr("d", path)
         .style("stroke-width", function (d) { return Math.max(1, d.dy); })
+        .style("stroke", function (d, i) {
+            return d.color = strokeColor[i];
+        })
         .sort(function (a, b) { return b.dy - a.dy; });
+
     // add the link titles
     link.append("title")
         .text(function (d) {
             return d.source.name + " → " +
                 d.target.name + "\n" + format(d.value);
         });
+
     // add in the nodes
     var node = svg.append("g").selectAll(".node")
         .data(graph.nodes)
@@ -78,6 +102,7 @@ d3.json('./src/data/data.json', function (error, graph) {
                 this.parentNode.appendChild(this);
             })
             .on("drag", dragmove));
+
     // add the rectangles for the nodes
     node.append("rect")
         .attr("height", function (d) { return d.dy; })
@@ -92,6 +117,7 @@ d3.json('./src/data/data.json', function (error, graph) {
         .text(function (d) {
             return d.name + "\n" + format(d.value);
         });
+
     // add in the title for the nodes
     node.append("text")
         .attr("x", -6)
@@ -103,6 +129,7 @@ d3.json('./src/data/data.json', function (error, graph) {
         .filter(function (d) { return d.x < width / 2; })
         .attr("x", 6 + sankey.nodeWidth())
         .attr("text-anchor", "start");
+
     // the function for moving the nodes
     function dragmove(d) {
         d3.select(this)
