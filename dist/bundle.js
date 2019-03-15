@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 // import * as d3 from 'd3';
 var d3 = window.d3;
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var units = "Widgets"; // set the dimensions and margins of the graph
+  var units = "dollars"; // set the dimensions and margins of the graph
 
   var margin = {
     top: 10,

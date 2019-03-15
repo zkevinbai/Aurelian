@@ -4,7 +4,7 @@
 const d3 = window.d3;
 
 export default () => {
-var units = "Widgets";
+var units = "dollars";
 
 // set the dimensions and margins of the graph
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
