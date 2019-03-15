@@ -98,8 +98,94 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
 
 document.addEventListener("DOMContentLoaded", function () {
-  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  var object = getDataObject();
+  var url = getUrlFromObject(object);
+  console.log(url);
+  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
+
+function getUrlFromObject(object) {
+  var jsonse = JSON.stringify(object);
+  var blob = new Blob([jsonse], {
+    type: "application/json"
+  });
+  var url = URL.createObjectURL(blob);
+  return url;
+}
+
+function getDataObject() {
+  return {
+    "nodes": [{
+      "node": 0,
+      "name": "Salary"
+    }, {
+      "node": 1,
+      "name": "Investment Return"
+    }, {
+      "node": 2,
+      "name": "Income"
+    }, {
+      "node": 3,
+      "name": "Savings"
+    }, {
+      "node": 4,
+      "name": "Investments"
+    }, {
+      "node": 5,
+      "name": "Expenses"
+    }, {
+      "node": 6,
+      "name": "Taxes"
+    }, {
+      "node": 7,
+      "name": "Saved"
+    }, {
+      "node": 8,
+      "name": "Spent"
+    }],
+    "links": [{
+      "source": 0,
+      "target": 2,
+      "value": 75000
+    }, {
+      "source": 1,
+      "target": 2,
+      "value": 5000
+    }, {
+      "source": 2,
+      "target": 3,
+      "value": 12000
+    }, {
+      "source": 2,
+      "target": 4,
+      "value": 4000
+    }, {
+      "source": 2,
+      "target": 5,
+      "value": 36000
+    }, {
+      "source": 2,
+      "target": 6,
+      "value": 28000
+    }, {
+      "source": 3,
+      "target": 7,
+      "value": 12000
+    }, {
+      "source": 4,
+      "target": 7,
+      "value": 4000
+    }, {
+      "source": 5,
+      "target": 8,
+      "value": 36000
+    }, {
+      "source": 6,
+      "target": 8,
+      "value": 28000
+    }]
+  };
+}
 
 /***/ }),
 
@@ -114,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 __webpack_require__.r(__webpack_exports__);
 // import * as d3 from 'd3';
 var d3 = window.d3;
-/* harmony default export */ __webpack_exports__["default"] = (function () {
+/* harmony default export */ __webpack_exports__["default"] = (function (url) {
   var units = "dollars"; // set the dimensions and margins of the graph
 
   var margin = {
@@ -145,8 +231,9 @@ var d3 = window.d3;
   var sankey = d3.sankey().nodeWidth(36).nodePadding(40).size([width, height]);
   var path = sankey.link();
   var strokeColor = ["rgb(37, 90, 234)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(33, 237, 97)", "rgb(239, 43, 49)", "rgb(239, 43, 49)"]; // load the data
+  // d3.json('./src/data/data.json', function (error, graph) {
 
-  d3.json('./src/data/data.json', function (error, graph) {
+  d3.json(url, function (error, graph) {
     sankey.nodes(graph.nodes).links(graph.links).layout(32); // add in the links
 
     var link = svg.append("g").selectAll(".link").data(graph.links).enter().append("path").attr("class", "link").attr("d", path).style("stroke-width", function (d) {
