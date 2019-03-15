@@ -146,13 +146,37 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  // v3 input data array
-  var defaultInputData = [75000, 5000, 12000, 4000, 36000, 28000];
-  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_1__["dataParser"].apply(void 0, defaultInputData);
+  var salaryIncome = document.getElementById("salary").value;
+  var investmentReturnIncome = document.getElementById("investment-return").value;
+  var incomeSavings = document.getElementById("savings").value;
+  var incomeInvestments = document.getElementById("investments").value;
+  var incomeExpenses = document.getElementById("expenses").value;
+  var incomeTaxes = document.getElementById("taxes").value;
+  var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
+  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_1__["dataParser"].apply(void 0, userInput);
   var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_2__["default"].apply(void 0, _toConsumableArray(inputData));
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_3__["default"])(inputObject);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
-});
+}); // document.addEventListener("change"), () => {
+//     let salaryIncome = document.getElementById("salary").value;
+//     let investmentReturnIncome = document.getElementById("investment-return").value;
+//     let incomeSavings = document.getElementById("savings").value;
+//     let incomeInvestments = document.getElementById("investments").value;
+//     let incomeExpenses = document.getElementById("expenses").value;
+//     let incomeTaxes = document.getElementById("taxes").value;
+//     const userInput = [
+//         salaryIncome,
+//         investmentReturnIncome,
+//         incomeSavings,
+//         incomeInvestments,
+//         incomeExpenses,
+//         incomeTaxes,
+//     ];
+//     const inputData = dataParser(...userInput);
+//     const inputObject = objectMaker(...inputData);
+//     const url = urlMaker(inputObject);
+//     visualization(url)
+// }
 
 /***/ }),
 
