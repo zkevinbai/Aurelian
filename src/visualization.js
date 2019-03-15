@@ -12,7 +12,17 @@ var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     height = 300 - margin.top - margin.bottom;
 
 // format variables
-var color = d3.scaleOrdinal().range(["red", "green", "blue", "purple", "orange", "purple"]);
+var color = d3.scaleOrdinal().range([
+    "rgba(45, 165, 239, 0.75)", 
+    "rgba(78, 244, 242, 0.75)",
+    "rgb(37, 90, 234)",
+    "rgba(45, 165, 239, 1)",
+    "rgba(78, 244, 242, 1)",
+    "rgb(239, 237, 91)",
+    "rgb(247, 168, 236)",
+    "rgb(33, 237, 97)",
+    "rgb(239, 43, 49)"
+]);
 var formatNumber = d3.format(",.0f"),    // zero decimal places
     format = function (d) { return formatNumber(d) + " " + units; },
     color;
