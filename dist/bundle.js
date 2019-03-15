@@ -141,7 +141,7 @@ var d3 = window.d3;
   var sankey = d3.sankey().nodeWidth(36).nodePadding(40).size([width, height]);
   var path = sankey.link(); // load the data
 
-  d3.json('./data.json', function (error, graph) {
+  d3.json('./src/data/data.json', function (error, graph) {
     sankey.nodes(graph.nodes).links(graph.links).layout(32); // add in the links
 
     var link = svg.append("g").selectAll(".link").data(graph.links).enter().append("path").attr("class", "link").attr("d", path).style("stroke-width", function (d) {

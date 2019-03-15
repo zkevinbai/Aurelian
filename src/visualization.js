@@ -33,7 +33,7 @@ var sankey = d3.sankey()
 var path = sankey.link();
 
 // load the data
-d3.json('./data.json', function (error, graph) {
+d3.json('./src/data/data.json', function (error, graph) {
     sankey
         .nodes(graph.nodes)
         .links(graph.links)
