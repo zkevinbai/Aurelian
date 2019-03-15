@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var investmentsSaved = 4000;
   var expensesSpent = 36000;
   var taxesSpent = 28000;
-  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved);
+  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent);
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });

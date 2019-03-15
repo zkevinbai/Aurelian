@@ -19,14 +19,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const object = objectMaker(
         salaryIncome,
         investmentReturnIncome,
-        incomeExpenses,
-        incomeTaxes,
+
         incomeSavings,
         incomeInvestments,
-        expensesSpent,
-        taxesSpent,
+        incomeExpenses,
+        incomeTaxes,
+
         savingsSaved,
-        investmentsSaved
+        investmentsSaved,
+        expensesSpent,
+        taxesSpent
     );
     const url = urlMaker(object);
     visualization(url)
