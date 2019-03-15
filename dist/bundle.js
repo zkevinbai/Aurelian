@@ -29239,7 +29239,9 @@ var formInputChange = function formInputChange() {
   document.getElementById("user-input").addEventListener("keyup", renderVisualization);
 };
 var formReset = function formReset() {
-  document.getElementById("user-input").addEventListener("reset", renderVisualization);
+  document.getElementById("user-input").addEventListener("reset", function () {
+    return setTimeout(renderVisualization);
+  });
 };
 
 /***/ }),
