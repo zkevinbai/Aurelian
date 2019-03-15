@@ -1,15 +1,17 @@
-const object = getDataObject();
-const url = getUrlFromObject(object);
-export default url;
+export default genDataObject;
 
-function getUrlFromObject(object) {
-    var jsonse = JSON.stringify(object);
-    var blob = new Blob([jsonse], { type: "application/json" });
-    var url = URL.createObjectURL(blob);
-    return url;
-}
-
-function getDataObject() {
+function genDataObject(
+    salaryIncome,
+    investmentReturnIncome,
+    incomeExpenses,
+    incomeTaxes,
+    incomeSavings,
+    incomeInvestments,
+    expensesSpent,
+    taxesSpent,
+    savingsSaved,
+    investmentsSaved
+) {
     return {
         "nodes": [
             {

@@ -96,38 +96,31 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
-/* harmony import */ var _inputParser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inputParser */ "./src/inputParser.js");
+/* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./objectGenerator */ "./src/objectGenerator.js");
+/* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./urlGenerator */ "./src/urlGenerator.js");
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(_inputParser__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  var object = Object(_objectGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(object);
+  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
 });
 
 /***/ }),
 
-/***/ "./src/inputParser.js":
-/*!****************************!*\
-  !*** ./src/inputParser.js ***!
-  \****************************/
+/***/ "./src/objectGenerator.js":
+/*!********************************!*\
+  !*** ./src/objectGenerator.js ***!
+  \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var object = getDataObject();
-var url = getUrlFromObject(object);
-/* harmony default export */ __webpack_exports__["default"] = (url);
+/* harmony default export */ __webpack_exports__["default"] = (genDataObject);
 
-function getUrlFromObject(object) {
-  var jsonse = JSON.stringify(object);
-  var blob = new Blob([jsonse], {
-    type: "application/json"
-  });
-  var url = URL.createObjectURL(blob);
-  return url;
-}
-
-function getDataObject() {
+function genDataObject(salaryIncome, investmentReturnIncome, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, expensesSpent, taxesSpent, savingsSaved, investmentsSaved) {
   return {
     "nodes": [{
       "node": 0,
@@ -200,6 +193,28 @@ function getDataObject() {
     }]
   };
 }
+
+/***/ }),
+
+/***/ "./src/urlGenerator.js":
+/*!*****************************!*\
+  !*** ./src/urlGenerator.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function getUrlFromObject(object) {
+  var jsonse = JSON.stringify(object);
+  var blob = new Blob([jsonse], {
+    type: "application/json"
+  });
+  var url = URL.createObjectURL(blob);
+  return url;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (getUrlFromObject);
 
 /***/ }),
 
