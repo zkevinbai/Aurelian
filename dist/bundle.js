@@ -29104,7 +29104,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
   var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
-  document.getElementById("user-input").addEventListener("keydown", function () {
+  document.getElementById("user-input").addEventListener("keyup", function () {
     d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
     var salaryIncome = document.getElementById("salary").value;
     var investmentReturnIncome = document.getElementById("investment-return").value;

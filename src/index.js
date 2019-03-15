@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let url = urlMaker(inputObject);
     visualization(url)
 
-    document.getElementById("user-input").addEventListener("keydown", () => {
+    document.getElementById("user-input").addEventListener("keyup", () => {
         d3.select("svg").remove();
         let salaryIncome = document.getElementById("salary").value;
         let investmentReturnIncome = document.getElementById("investment-return").value;
