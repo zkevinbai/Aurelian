@@ -234,6 +234,18 @@ var d3 = window.d3;
   // d3.json('./src/data/data.json', function (error, graph) {
 
   d3.json(url, function (error, graph) {
+    // d3.json('./src/data/sankeyData.json', function (error, graph) {
+    var nodeMap = {};
+    graph.nodes.forEach(function (x) {
+      nodeMap[x.name] = x;
+    });
+    graph.links = graph.links.map(function (x) {
+      return {
+        source: nodeMap[x.source],
+        target: nodeMap[x.target],
+        value: x.value
+      };
+    });
     sankey.nodes(graph.nodes).links(graph.links).layout(32); // add in the links
 
     var link = svg.append("g").selectAll(".link").data(graph.links).enter().append("path").attr("class", "link").attr("d", path).style("stroke-width", function (d) {
