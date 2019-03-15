@@ -96,13 +96,27 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./visualization */ "./src/visualization.js");
+/* harmony import */ var _inputParser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./inputParser */ "./src/inputParser.js");
+
 
 document.addEventListener("DOMContentLoaded", function () {
-  var object = getDataObject();
-  var url = getUrlFromObject(object);
-  console.log(url);
-  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(url);
+  Object(_visualization__WEBPACK_IMPORTED_MODULE_0__["default"])(_inputParser__WEBPACK_IMPORTED_MODULE_1__["default"]);
 });
+
+/***/ }),
+
+/***/ "./src/inputParser.js":
+/*!****************************!*\
+  !*** ./src/inputParser.js ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var object = getDataObject();
+var url = getUrlFromObject(object);
+/* harmony default export */ __webpack_exports__["default"] = (url);
 
 function getUrlFromObject(object) {
   var jsonse = JSON.stringify(object);
