@@ -29029,63 +29029,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/dataGenerator.js":
-/*!******************************!*\
-  !*** ./src/dataGenerator.js ***!
-  \******************************/
-/*! exports provided: defaultData, dataMaker, dataParser */
+/***/ "./src/generators/dataGenerator.js":
+/*!*****************************************!*\
+  !*** ./src/generators/dataGenerator.js ***!
+  \*****************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultData", function() { return defaultData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataMaker", function() { return dataMaker; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dataParser", function() { return dataParser; });
-var defaultData = function defaultData() {
-  return [75000, 5000, 12000, 4000, 36000, 28000, 12000, 4000, 36000, 28000];
-}; // let salaryIncome = 75000;
-// let investmentReturnIncome = 5000;
-// let incomeSavings = 12000;
-// let incomeInvestments = 4000;
-// let incomeExpenses = 36000;
-// let incomeTaxes = 28000;
-// let savingsSaved = 12000;
-// let investmentsSaved = 4000;
-// let expensesSpent = 36000;
-// let taxesSpent = 28000;
-
-var dataMaker = function dataMaker(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent) {
-  return [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, savingsSaved, investmentsSaved, expensesSpent, taxesSpent];
-};
 var dataParser = function dataParser(salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes) {
   return [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
 };
 
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _util_eventUtil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/eventUtil */ "./src/util/eventUtil.js");
-
-document.addEventListener("DOMContentLoaded", function () {
-  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["renderVisualization"])();
-  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formInputChange"])();
-  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formReset"])();
-});
+/* harmony default export */ __webpack_exports__["default"] = (dataParser);
 
 /***/ }),
 
-/***/ "./src/objectGenerator.js":
-/*!********************************!*\
-  !*** ./src/objectGenerator.js ***!
-  \********************************/
+/***/ "./src/generators/objectGenerator.js":
+/*!*******************************************!*\
+  !*** ./src/generators/objectGenerator.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29169,10 +29133,10 @@ function getObjectFromData(salaryIncome, investmentReturnIncome, incomeSavings, 
 
 /***/ }),
 
-/***/ "./src/urlGenerator.js":
-/*!*****************************!*\
-  !*** ./src/urlGenerator.js ***!
-  \*****************************/
+/***/ "./src/generators/urlGenerator.js":
+/*!****************************************!*\
+  !*** ./src/generators/urlGenerator.js ***!
+  \****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -29191,6 +29155,25 @@ function getUrlFromObject(object) {
 
 /***/ }),
 
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _util_eventUtil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/eventUtil */ "./src/util/eventUtil.js");
+
+document.addEventListener("DOMContentLoaded", function () {
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["renderVisualization"])();
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formInputChange"])();
+  Object(_util_eventUtil__WEBPACK_IMPORTED_MODULE_0__["formReset"])();
+});
+
+/***/ }),
+
 /***/ "./src/util/eventUtil.js":
 /*!*******************************!*\
   !*** ./src/util/eventUtil.js ***!
@@ -29205,9 +29188,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formReset", function() { return formReset; });
 /* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
 /* harmony import */ var _visualization__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../visualization */ "./src/visualization.js");
-/* harmony import */ var _urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../urlGenerator */ "./src/urlGenerator.js");
-/* harmony import */ var _objectGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../objectGenerator */ "./src/objectGenerator.js");
-/* harmony import */ var _dataGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dataGenerator */ "./src/dataGenerator.js");
+/* harmony import */ var _generators_urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generators/urlGenerator */ "./src/generators/urlGenerator.js");
+/* harmony import */ var _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generators/objectGenerator */ "./src/generators/objectGenerator.js");
+/* harmony import */ var _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generators/dataGenerator */ "./src/generators/dataGenerator.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -29230,9 +29213,9 @@ var renderVisualization = function renderVisualization() {
   var incomeExpenses = document.getElementById("expenses").value;
   var incomeTaxes = document.getElementById("taxes").value;
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
-  var inputData = _dataGenerator__WEBPACK_IMPORTED_MODULE_4__["dataParser"].apply(void 0, userInput);
-  var inputObject = _objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
-  var url = Object(_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
+  var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
+  var inputObject = _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
+  var url = Object(_generators_urlGenerator__WEBPACK_IMPORTED_MODULE_2__["default"])(inputObject);
   Object(_visualization__WEBPACK_IMPORTED_MODULE_1__["default"])(url);
 };
 var formInputChange = function formInputChange() {
@@ -29267,9 +29250,7 @@ var d3 = window.d3;
     left: 10
   },
       width = 700 - margin.left - margin.right,
-      height = 300 - margin.top - margin.bottom; // width = 1400 - margin.left - margin.right,
-  // height = 700 - margin.top - margin.bottom;
-  // format variables
+      height = 300 - margin.top - margin.bottom; // format variables
 
   var color = d3.scaleOrdinal().range(["rgba(45, 165, 239, 0.75)", "rgba(78, 244, 242, 0.75)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(239, 43, 49)"]);
 

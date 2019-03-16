@@ -10,8 +10,6 @@ var units = "dollars";
 var margin = { top: 10, right: 10, bottom: 10, left: 10 },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
-    // width = 1400 - margin.left - margin.right,
-    // height = 700 - margin.top - margin.bottom;
 
 // format variables
 var color = d3.scaleOrdinal().range([
