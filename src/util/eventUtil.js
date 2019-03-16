@@ -1,8 +1,8 @@
 import * as d3 from 'd3';
 import visualization from '../visualization';
-import urlMaker from '../urlGenerator';
-import objectMaker from '../objectGenerator';
-import { dataParser } from '../dataGenerator';
+import urlMaker from '../generators/urlGenerator';
+import objectMaker from '../generators/objectGenerator';
+import dataParser from '../generators/dataGenerator';
 
 export const renderVisualization = () => {
     d3.select("svg").remove();
