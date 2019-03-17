@@ -1,0 +1,15 @@
+.visualization{
+    grid-column: 1/5;
+    grid-row: 1/4;
+
+    align-self: center;
+
+    height: 100vh;
+    width: 100vw;
+
+    background: rgb(255,255,255);
+}
+
+footer{
+  display: none;
+}
