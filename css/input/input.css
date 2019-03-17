@@ -3,9 +3,12 @@
     font-family: 'caveat';
 }
 
-#user-input input{
+.input-field-text{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 4fr;
 }
 
+
 #salary-value{
-    height: 15px;
 }
