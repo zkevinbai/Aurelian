@@ -14,6 +14,9 @@ export const renderVisualization = () => {
     let incomeExpenses = document.getElementById("expenses").value;
     let incomeTaxes = document.getElementById("taxes").value;
 
+    document.getElementById("salary-value").innerHTML = salaryIncome;
+
+
     let userInput = [
         salaryIncome,
         investmentReturnIncome,
@@ -28,7 +31,6 @@ export const renderVisualization = () => {
     let url = urlMaker(inputObject);
     visualization(url)
 }
-
 
 export const formInputChange = () => {
     document.getElementById("user-input").addEventListener("keyup", renderVisualization)
