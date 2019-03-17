@@ -1,12 +1,11 @@
 #user-input{
-    /* font-size: 4.5vh;  */
     font-family: 'caveat';
 }
 
 .input-field{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 4fr 1fr 0.5fr;
+    grid-template-columns: 4fr 1fr;
 }
 
 
