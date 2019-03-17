@@ -1,0 +1,11 @@
+#user-input{
+    /* font-size: 4.5vh;  */
+    font-family: 'caveat';
+}
+
+#user-input input{
+}
+
+#salary-value{
+    height: 15px;
+}
