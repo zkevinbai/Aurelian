@@ -26,10 +26,26 @@
                 <label>
                     <h1>Salary</h1>
                     <div class="input-field">
-                        <input id="salary" type="range" value="75000" min="0" max="500000" step="500">
+                        <input 
+                            id="salary" 
+                            type="range" 
+                            value="75000" 
+                            min="0" 
+                            max="300000" 
+                            step="500"
+                            list="salary-list"
+                        >
+                        <datalist id="salary-list">
+                            <option>0</option>
+                            <option>50000</option>
+                            <option>100000</option>
+                            <option>150000</option>
+                            <option>200000</option>
+                            <option>250000</option>
+                            <option>300000</option>
+                        </datalist>
                         <p id="salary-value"></p>
                     </div>
-
                 </label>
 
                 <label>
