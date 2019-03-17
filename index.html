@@ -37,8 +37,9 @@
                         >
                         <datalist id="main-list">
                             <option>0</option>
-                            <option>500</option>
+                            <option>25000</option>
                             <option>50000</option>
+                            <option>75000</option>
                             <option>100000</option>
                             <option>150000</option>
                             <option>200000</option>
@@ -48,6 +49,8 @@
                             <option>400000</option>
                             <option>450000</option>
                             <option>500000</option>
+                            <option>550000</option>
+                            <option>600000</option>
                         </datalist>
                         <p id="salary-value"></p>
                     </div>
@@ -71,22 +74,17 @@
 
                 <label>
                     <h1>Savings</h1>
-                    <input 
-                        id="savings"
-                        type="text" 
-                        value="12000"
-                    >
                     <div class="input-field">
                         <input 
-                            id="investment-return" 
+                            id="savings" 
                             type="range" 
-                            value="5000" 
+                            value="12000" 
                             min="0" 
-                            max="300000" 
+                            max="500000" 
                             step="500" 
-                            list="salary-list"
+                            list="main-list"
                         >
-                        <p id="investment-return-value"></p>
+                        <p id="savings-value"></p>
                     </div>
                 </label>
 
