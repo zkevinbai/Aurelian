@@ -29194,11 +29194,12 @@ var commafy = function commafy(numberString) {
 /*!*******************************!*\
   !*** ./src/util/eventUtil.js ***!
   \*******************************/
-/*! exports provided: renderVisualization, formInputChange, formReset */
+/*! exports provided: updateUserInput, renderVisualization, formInputChange, formReset */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUserInput", function() { return updateUserInput; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderVisualization", function() { return renderVisualization; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formInputChange", function() { return formInputChange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formReset", function() { return formReset; });
@@ -29222,6 +29223,25 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
+var updateUserInput = function updateUserInput() {
+  var salaryIncome = document.getElementById("salary").value;
+  var investmentReturnIncome = document.getElementById("investment-return").value;
+  var incomeSavings = document.getElementById("savings").value;
+  var incomeInvestments = document.getElementById("investments").value;
+  var incomeExpenses = document.getElementById("expenses").value;
+  var incomeTaxes = document.getElementById("taxes").value;
+  document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
+  document.getElementById("investment-return-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(investmentReturnIncome));
+  document.getElementById("savings-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeSavings));
+  setTimeout(function () {
+    incomeSavings = document.getElementById("savings").value;
+    incomeInvestments = document.getElementById("investments").value;
+    incomeExpenses = document.getElementById("expenses").value;
+    incomeTaxes = document.getElementById("taxes").value;
+    document.getElementById("savings").max = "".concat(parseInt(salaryIncome) + parseInt(investmentReturnIncome));
+    document.getElementById("savings-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeSavings));
+  });
+};
 var renderVisualization = function renderVisualization() {
   d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
   var salaryIncome = document.getElementById("salary").value;
@@ -29232,6 +29252,7 @@ var renderVisualization = function renderVisualization() {
   var incomeTaxes = document.getElementById("taxes").value;
   document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
   document.getElementById("investment-return-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(investmentReturnIncome));
+  document.getElementById("savings-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeSavings));
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
   var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
   var inputObject = _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));

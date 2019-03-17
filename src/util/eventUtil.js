@@ -5,11 +5,19 @@ import objectMaker from '../generators/objectGenerator';
 import dataParser from '../generators/dataGenerator';
 import {commafy} from './displayUtil';
 
+export const updateRangeMax = () => {
+    let salaryIncome = document.getElementById("salary").value;
+    let investmentReturnIncome = document.getElementById("investment-return").value;
+
+    document.getElementById("savings").max = `${parseInt(salaryIncome) + parseInt(investmentReturnIncome)}`
+}
+
 export const renderVisualization = () => {
     d3.select("svg").remove();
 
     let salaryIncome = document.getElementById("salary").value;
     let investmentReturnIncome = document.getElementById("investment-return").value;
+
     let incomeSavings = document.getElementById("savings").value;
     let incomeInvestments = document.getElementById("investments").value;
     let incomeExpenses = document.getElementById("expenses").value;
@@ -17,6 +25,8 @@ export const renderVisualization = () => {
 
     document.getElementById("salary-value").innerHTML = `$${commafy(salaryIncome)}`;
     document.getElementById("investment-return-value").innerHTML = `$${commafy(investmentReturnIncome)}`;
+
+    document.getElementById("savings-value").innerHTML = `$${commafy(incomeSavings)}`;
 
     let userInput = [
         salaryIncome,
