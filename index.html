@@ -97,11 +97,15 @@
 
                 <label>
                     <h1>Expenses</h1>
-                    <input 
-                        id="expenses"
-                        type="text"
-                        value="36000"
-                    >
+                    <div class="input-field">
+                        <input 
+                            id="expenses" 
+                            type="range" value="36000" 
+                            min="0" max="300000" 
+                            step="500" 
+                            list="main-list">
+                        <p id="expenses-value"></p>
+                    </div>
                 </label>
 
                 <label>

@@ -29239,8 +29239,8 @@ var renderVisualization = function renderVisualization() {
   document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
   document.getElementById("investment-return-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(investmentReturnIncome));
   document.getElementById("savings-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeSavings));
-  document.getElementById("investments-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeInvestments)); // document.getElementById("expenses-value").innerHTML = `$${commafy(incomeExpenses)}`;
-  // document.getElementById("taxes-value").innerHTML = `$${commafy(incomeTaxes)}`;
+  document.getElementById("investments-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeInvestments));
+  document.getElementById("expenses-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeExpenses)); // document.getElementById("taxes-value").innerHTML = `$${commafy(incomeTaxes)}`;
 
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
   var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
