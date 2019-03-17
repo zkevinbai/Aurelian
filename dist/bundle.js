@@ -29231,6 +29231,7 @@ var renderVisualization = function renderVisualization() {
   var incomeExpenses = document.getElementById("expenses").value;
   var incomeTaxes = document.getElementById("taxes").value;
   document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
+  document.getElementById("investment-return-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(investmentReturnIncome));
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
   var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
   var inputObject = _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));

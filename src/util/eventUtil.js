@@ -16,6 +16,7 @@ export const renderVisualization = () => {
     let incomeTaxes = document.getElementById("taxes").value;
 
     document.getElementById("salary-value").innerHTML = `$${commafy(salaryIncome)}`;
+    document.getElementById("investment-return-value").innerHTML = `$${commafy(investmentReturnIncome)}`;
 
     let userInput = [
         salaryIncome,
