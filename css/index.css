@@ -11,15 +11,7 @@
 @import url('../css/visualization/visualization.css');
 
 /* INPUT -------------------------------------------------------------------- */
-
-#user-input{
-    font-size: 4.5vh; 
-    font-family: 'caveat';
-}
-
-#user-input input{
-}
-
+@import url('../css/input/input.css');
 
 
 
