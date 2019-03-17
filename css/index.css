@@ -1,18 +1,37 @@
 /* EXTERNAL ------------------------------------------------------------------ */
-
 @import url('https://fonts.googleapis.com/css?family=Caveat|Lobster|Roboto:100,300,400,500,700,900');
 
 /* RESET -------------------------------------------------------------------- */
-
 @import url('../css/general/reset.css');
 
 /* BODY --------------------------------------------------------------------- */
- 
 @import url('../css/general/body.css');
 
 /* VISUALIZATON ------------------------------------------------------------- */
-
 @import url('../css/visualization/visualization.css');
+
+/* INPUT -------------------------------------------------------------------- */
+
+#user-input{
+    font-size: 5vh; 
+    font-family: 'caveat';
+}
+
+#user-input input{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
