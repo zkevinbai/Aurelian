@@ -3,6 +3,7 @@ import visualization from '../visualization';
 import urlMaker from '../generators/urlGenerator';
 import objectMaker from '../generators/objectGenerator';
 import dataParser from '../generators/dataGenerator';
+import {commafy} from './displayUtil';
 
 export const renderVisualization = () => {
     d3.select("svg").remove();
@@ -14,8 +15,7 @@ export const renderVisualization = () => {
     let incomeExpenses = document.getElementById("expenses").value;
     let incomeTaxes = document.getElementById("taxes").value;
 
-    document.getElementById("salary-value").innerHTML = salaryIncome;
-
+    document.getElementById("salary-value").innerHTML = `$${commafy(salaryIncome)}`;
 
     let userInput = [
         salaryIncome,

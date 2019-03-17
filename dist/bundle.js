@@ -29174,6 +29174,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
+/***/ "./src/util/displayUtil.js":
+/*!*********************************!*\
+  !*** ./src/util/displayUtil.js ***!
+  \*********************************/
+/*! exports provided: commafy */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "commafy", function() { return commafy; });
+var commafy = function commafy(numberString) {
+  return numberString.replace(/(.)(?=(.{3})+$)/g, "$1,");
+};
+
+/***/ }),
+
 /***/ "./src/util/eventUtil.js":
 /*!*******************************!*\
   !*** ./src/util/eventUtil.js ***!
@@ -29191,6 +29207,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _generators_urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generators/urlGenerator */ "./src/generators/urlGenerator.js");
 /* harmony import */ var _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generators/objectGenerator */ "./src/generators/objectGenerator.js");
 /* harmony import */ var _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generators/dataGenerator */ "./src/generators/dataGenerator.js");
+/* harmony import */ var _displayUtil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./displayUtil */ "./src/util/displayUtil.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -29198,6 +29215,7 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 
 
 
@@ -29212,7 +29230,7 @@ var renderVisualization = function renderVisualization() {
   var incomeInvestments = document.getElementById("investments").value;
   var incomeExpenses = document.getElementById("expenses").value;
   var incomeTaxes = document.getElementById("taxes").value;
-  document.getElementById("salary-value").innerHTML = salaryIncome;
+  document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
   var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
   var inputObject = _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
