@@ -110,11 +110,15 @@
 
                 <label>
                     <h1>Taxes</h1>
-                    <input 
-                        id="taxes"
-                        type="text"
-                        value="28000"
-                    >
+                    <div class="input-field">
+                        <input 
+                            id="taxes" 
+                            type="range" value="28000" 
+                            min="0" max="300000" 
+                            step="500" 
+                            list="main-list">
+                        <p id="taxes-value"></p>
+                    </div>                    
                 </label>
 
                 <input type="reset">
