@@ -32,6 +32,7 @@ export const renderVisualization = () => {
 
 export const formInputChange = () => {
     document.getElementById("user-input").addEventListener("keyup", renderVisualization)
+    document.getElementById("user-input").addEventListener("mouseup", renderVisualization)
 }
 
 export const formReset = () =>{

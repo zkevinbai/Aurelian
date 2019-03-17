@@ -29220,6 +29220,7 @@ var renderVisualization = function renderVisualization() {
 };
 var formInputChange = function formInputChange() {
   document.getElementById("user-input").addEventListener("keyup", renderVisualization);
+  document.getElementById("user-input").addEventListener("mouseup", renderVisualization);
 };
 var formReset = function formReset() {
   document.getElementById("user-input").addEventListener("reset", function () {
