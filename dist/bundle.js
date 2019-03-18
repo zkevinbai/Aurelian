@@ -29349,7 +29349,9 @@ var d3 = window.d3;
     node.append("text").attr("x", -6).attr("y", function (d) {
       return d.dy / 2;
     }).attr("dy", ".35em").attr("text-anchor", "end").attr("transform", null).text(function (d) {
-      return d.name;
+      if (d.value !== 0) {
+        return d.name;
+      }
     }).filter(function (d) {
       return d.x < width / 2;
     }).attr("x", 6 + sankey.nodeWidth()).attr("text-anchor", "start"); // the function for moving the nodes

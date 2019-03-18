@@ -138,7 +138,11 @@ d3.json(url, function (error, graph) {
         .attr("dy", ".35em")
         .attr("text-anchor", "end")
         .attr("transform", null)
-        .text(function (d) { return d.name; })
+        .text(function (d) { 
+            if(d.value !== 0){
+                return d.name; 
+            }
+        })
         .filter(function (d) { return d.x < width / 2; })
         .attr("x", 6 + sankey.nodeWidth())
         .attr("text-anchor", "start");
