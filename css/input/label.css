@@ -1,0 +1,44 @@
+/* 
+rgba(45, 165, 239, 0.75)
+rgba(78, 244, 242, 0.75)
+
+rgb(37, 90, 234)
+
+rgba(45, 165, 239, 1)
+rgba(78, 244, 242, 1)
+rgb(239, 237, 91)
+rgb(247, 168, 236)
+
+rgb(33, 237, 97)
+rgb(239, 43, 49)
+ */
+
+.label{
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.label-salary{
+    background: rgba(45, 165, 239, 0.75);
+}
+
+.label-investment-return{
+    background: rgba(78, 244, 242, 0.75);
+}
+
+.label-savings{
+    background: rgb(39,201,168);
+}
+
+.label-investments{
+    background: rgb(56,241,170);
+}
+
+.label-expenses{
+    background: rgb(239, 237, 91)
+}
+
+.label-taxes{
+    background: rgb(247, 168, 236)
+}

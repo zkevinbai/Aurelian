@@ -16,74 +16,123 @@
 </head>
 <body>
         <header>
-            header
+            <h1 class="logo-text" >
+                Aurelian
+            </h1>
+
+            <h2 class="logo-subtext">
+                Visualize your personal finances
+            </h2>
         </header>
 
         <section>
+            <datalist id="main-list">
+                <option>0</option>
+                <option>500</option>
+
+                <option>5000</option>
+                <option>10000</option>
+                <option>20000</option>
+                <option>30000</option>
+                <option>40000</option>
+
+                <option>50000</option>
+                <option>75000</option>
+                <option>100000</option>
+
+                <option>150000</option>
+                <option>200000</option>
+                <option>250000</option>
+                <option>300000</option>
+            </datalist>
             <form
                 id="user-input"
             >
-                <label>
+                <div class="label label-salary">
                     <h1>Salary</h1>
-                    <input 
-                        id="salary"
-                        type="text"
-                        value="75000"
-                    >
-                    <!-- <input 
-                        id="salary"
-                        type="range"
-                        value="75000"
-                        min="0.01" max="1000000" step="500"
-                    > -->
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="salary" 
+                            type="range" value="75000" 
+                            min="0" max="300000" 
+                            step="1000"
+                            list="main-list"
+                        >
+                        <p id="salary-value"></p>
+                    </div>
+                </div>
 
-                <label>
+                <div class="label label-investment-return">
                     <h1>Investment Return</h1>
-                    <input 
-                        id="investment-return"
-                        type="text"
-                        value="5000"
-                    >
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="investment-return"
+                            type="range" value="5000" 
+                            min="0" max="300000" 
+                            step="1000"
+                            list="main-list"
+                        >
+                        <p id="investment-return-value"></p>
+                    </div>
+                </div>
 
-                <label>
+                <div class="label label-savings">
                     <h1>Savings</h1>
-                    <input 
-                        id="savings"
-                        type="text" 
-                        value="12000"
-                    >
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="savings" 
+                            type="range" value="12000" 
+                            min="0" max="300000" 
+                            step="1000" 
+                            list="main-list"
+                        >
+                        <p id="savings-value"></p>
+                    </div>
+                </div>
 
-                <label>
+                <div class="label label-investments">
                     <h1>Investments</h1>
-                    <input 
-                        id="investments"
-                        type="text" 
-                        value="4000"
-                    >
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="investments" 
+                            type="range" value="4000" 
+                            min="0" max="300000" 
+                            step="1000" 
+                            list="main-list">
+                        <p id="investments-value"></p>
+                    </div>
+                </div>
 
-                <label>
+                <div class="label label-expenses">
                     <h1>Expenses</h1>
-                    <input 
-                        id="expenses"
-                        type="text"
-                        value="36000"
-                    >
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="expenses" 
+                            type="range" value="36000" 
+                            min="0" max="300000" 
+                            step="1000" 
+                            list="main-list">
+                        <p id="expenses-value"></p>
+                    </div>
+                </div>
 
-                <label>
+                <div class="label label-taxes">
                     <h1>Taxes</h1>
-                    <input 
-                        id="taxes"
-                        type="text"
-                        value="28000"
-                    >
-                </label>
+                    <div class="input-field">
+                        <input 
+                            id="taxes" 
+                            type="range" value="28000" 
+                            min="0" max="300000" 
+                            step="1000" 
+                            list="main-list">
+                        <p id="taxes-value"></p>
+                    </div>                    
+                </div>
 
-                <input type="reset">
+                <input 
+                    class="label input-reset"
+                    type="reset"
+                >
             </form>
         </section>
 
@@ -95,34 +144,3 @@
         </footer>
 </body>
 </html>
-
-<!-- <label>
-    <h1>Salary</h1>
-    <input type="number" min="1000" max="1000000" step="500">
-    <input type="range">
-</label>
-<label>
-    <h1>Investment Return</h1>
-    <input type="text">
-    <input type="range">
-</label>
-<label>
-    <h1>Expenses</h1>
-    <input type="text">
-    <input type="range">
-</label>
-<label>
-    <h1>Taxes</h1>
-    <input type="text">
-    <input type="range">
-</label>
-<label>
-    <h1>Savings</h1>
-    <input type="text">
-    <input type="range">
-</label>
-<label>
-    <h1>Investments</h1>
-    <input type="text">
-    <input type="range">
-</label> -->

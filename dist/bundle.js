@@ -29174,15 +29174,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /***/ }),
 
-/***/ "./src/util/eventUtil.js":
-/*!*******************************!*\
-  !*** ./src/util/eventUtil.js ***!
-  \*******************************/
-/*! exports provided: renderVisualization, formInputChange, formReset */
+/***/ "./src/util/displayUtil.js":
+/*!*********************************!*\
+  !*** ./src/util/displayUtil.js ***!
+  \*********************************/
+/*! exports provided: commafy */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "commafy", function() { return commafy; });
+var commafy = function commafy(numberString) {
+  return numberString.replace(/(.)(?=(.{3})+$)/g, "$1,");
+};
+
+/***/ }),
+
+/***/ "./src/util/eventUtil.js":
+/*!*******************************!*\
+  !*** ./src/util/eventUtil.js ***!
+  \*******************************/
+/*! exports provided: updateRangeMax, renderVisualization, formInputChange, formReset */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateRangeMax", function() { return updateRangeMax; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderVisualization", function() { return renderVisualization; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formInputChange", function() { return formInputChange; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formReset", function() { return formReset; });
@@ -29191,6 +29208,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _generators_urlGenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../generators/urlGenerator */ "./src/generators/urlGenerator.js");
 /* harmony import */ var _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../generators/objectGenerator */ "./src/generators/objectGenerator.js");
 /* harmony import */ var _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../generators/dataGenerator */ "./src/generators/dataGenerator.js");
+/* harmony import */ var _displayUtil__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./displayUtil */ "./src/util/displayUtil.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
@@ -29204,6 +29222,12 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 
 
+
+var updateRangeMax = function updateRangeMax() {
+  var salaryIncome = document.getElementById("salary").value;
+  var investmentReturnIncome = document.getElementById("investment-return").value;
+  document.getElementById("savings").max = "".concat(parseInt(salaryIncome) + parseInt(investmentReturnIncome));
+};
 var renderVisualization = function renderVisualization() {
   d3__WEBPACK_IMPORTED_MODULE_0__["select"]("svg").remove();
   var salaryIncome = document.getElementById("salary").value;
@@ -29212,6 +29236,12 @@ var renderVisualization = function renderVisualization() {
   var incomeInvestments = document.getElementById("investments").value;
   var incomeExpenses = document.getElementById("expenses").value;
   var incomeTaxes = document.getElementById("taxes").value;
+  document.getElementById("salary-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(salaryIncome));
+  document.getElementById("investment-return-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(investmentReturnIncome));
+  document.getElementById("savings-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeSavings));
+  document.getElementById("investments-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeInvestments));
+  document.getElementById("expenses-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeExpenses));
+  document.getElementById("taxes-value").innerHTML = "$".concat(Object(_displayUtil__WEBPACK_IMPORTED_MODULE_5__["commafy"])(incomeTaxes));
   var userInput = [salaryIncome, investmentReturnIncome, incomeSavings, incomeInvestments, incomeExpenses, incomeTaxes];
   var inputData = _generators_dataGenerator__WEBPACK_IMPORTED_MODULE_4__["default"].apply(void 0, userInput);
   var inputObject = _generators_objectGenerator__WEBPACK_IMPORTED_MODULE_3__["default"].apply(void 0, _toConsumableArray(inputData));
@@ -29220,6 +29250,7 @@ var renderVisualization = function renderVisualization() {
 };
 var formInputChange = function formInputChange() {
   document.getElementById("user-input").addEventListener("keyup", renderVisualization);
+  document.getElementById("user-input").addEventListener("mouseup", renderVisualization);
 };
 var formReset = function formReset() {
   document.getElementById("user-input").addEventListener("reset", function () {
@@ -29252,7 +29283,7 @@ var d3 = window.d3;
       width = 700 - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom; // format variables
 
-  var color = d3.scaleOrdinal().range(["rgba(45, 165, 239, 0.75)", "rgba(78, 244, 242, 0.75)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(239, 43, 49)"]);
+  var color = d3.scaleOrdinal().range(["rgba(45, 165, 239, 0.75)", "rgba(78, 244, 242, 0.75)", "rgb(37, 90, 234)", "rgb(39,201,168)", "rgb(56,241,170)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(239, 43, 49)"]);
 
   var formatNumber = d3.format(",.0f"),
       // zero decimal places
@@ -29268,7 +29299,7 @@ var d3 = window.d3;
 
   var sankey = d3.sankey().nodeWidth(36).nodePadding(40).size([width, height]);
   var path = sankey.link();
-  var strokeColor = ["rgb(37, 90, 234)", "rgb(37, 90, 234)", "rgba(45, 165, 239, 1)", "rgba(78, 244, 242, 1)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(33, 237, 97)", "rgb(239, 43, 49)", "rgb(239, 43, 49)"]; // load the data
+  var strokeColor = ["rgb(37, 90, 234)", "rgb(37, 90, 234)", "rgb(39,201,168)", "rgb(56,241,170)", "rgb(239, 237, 91)", "rgb(247, 168, 236)", "rgb(33, 237, 97)", "rgb(33, 237, 97)", "rgb(239, 43, 49)", "rgb(239, 43, 49)"]; // load the data
   // d3.json('./src/data/data.json', function (error, graph) {
 
   d3.json(url, function (error, graph) {
@@ -29318,7 +29349,9 @@ var d3 = window.d3;
     node.append("text").attr("x", -6).attr("y", function (d) {
       return d.dy / 2;
     }).attr("dy", ".35em").attr("text-anchor", "end").attr("transform", null).text(function (d) {
-      return d.name;
+      if (d.value !== 0) {
+        return d.name;
+      }
     }).filter(function (d) {
       return d.x < width / 2;
     }).attr("x", 6 + sankey.nodeWidth()).attr("text-anchor", "start"); // the function for moving the nodes

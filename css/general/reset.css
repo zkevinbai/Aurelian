@@ -25,3 +25,14 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+
+input,
+select,
+textarea,
+button {
+    cursor: pointer;
+    border: none;
+    margin: none; 
+    padding: none;
+	background: transparent;
+}

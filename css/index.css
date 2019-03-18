@@ -11,15 +11,10 @@
 @import url('../css/visualization/visualization.css');
 
 /* INPUT -------------------------------------------------------------------- */
+@import url('../css/input/input.css');
 
-#user-input{
-    font-size: 4.5vh; 
-    font-family: 'caveat';
-}
-
-#user-input input{
-}
-
+/* LABEL -------------------------------------------------------------------- */
+@import url('../css/input/label.css');
 
 
 

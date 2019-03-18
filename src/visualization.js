@@ -18,8 +18,8 @@ var color = d3.scaleOrdinal().range([
 
     "rgb(37, 90, 234)",
 
-    "rgba(45, 165, 239, 1)",
-    "rgba(78, 244, 242, 1)",
+    "rgb(39,201,168)",
+    "rgb(56,241,170)",
     "rgb(239, 237, 91)",
     "rgb(247, 168, 236)",
 
@@ -52,8 +52,8 @@ const strokeColor = [
         "rgb(37, 90, 234)",
         "rgb(37, 90, 234)",
 
-        "rgba(45, 165, 239, 1)",
-        "rgba(78, 244, 242, 1)",
+        "rgb(39,201,168)",
+        "rgb(56,241,170)",
         "rgb(239, 237, 91)",
         "rgb(247, 168, 236)",
 
@@ -138,7 +138,11 @@ d3.json(url, function (error, graph) {
         .attr("dy", ".35em")
         .attr("text-anchor", "end")
         .attr("transform", null)
-        .text(function (d) { return d.name; })
+        .text(function (d) { 
+            if(d.value !== 0){
+                return d.name; 
+            }
+        })
         .filter(function (d) { return d.x < width / 2; })
         .attr("x", 6 + sankey.nodeWidth())
         .attr("text-anchor", "start");

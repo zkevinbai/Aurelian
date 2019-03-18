@@ -1,0 +1,35 @@
+#user-input{
+    font-family: 'caveat';
+    font-size: 5vh;
+    /* font-family: 'roboto'; */
+    /* font-size: 4.2vh; */
+}
+
+.input-field{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 0.25fr 1fr  0.25fr ;
+}
+
+.input-field p{
+    grid-column: 3;
+
+    font-size: 3.14vh;
+    font-family: 'roboto';
+    font-weight:300;
+}
+
+.input-reset{
+    border-radius: 15px;
+    background:  rgb(245,130,49);
+    color: rgb(255, 255, 255);
+
+    width: 96.75%;
+    font-size: 3.14vh;
+    font-family: 'roboto';
+}
+
+.input-reset:hover{
+    color:  rgb(245,130,49);
+    background: rgba(245,130,49,0.314);
+}
