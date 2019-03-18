@@ -5,7 +5,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: .5fr 4fr .5fr;
-    grid-template-rows: 10px 4fr .5fr;
+    grid-template-rows: 10px 4fr 10px;
 }
 
 /* STRUCTURE ---------------------------------------------------------------- */
