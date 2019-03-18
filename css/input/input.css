@@ -24,6 +24,10 @@
     outline-color: rgba(255, 255, 255, 0);
     outline-offset: 15px;
     border-radius: 15px;
+
+    width: 100%;
+    font-size: 4.5fr;
+    font-family: 'caveat';
 }
 
 .input-reset:hover{
