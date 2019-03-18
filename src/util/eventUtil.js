@@ -25,6 +25,7 @@ export const renderVisualization = () => {
 
     document.getElementById("salary-value").innerHTML = `$${commafy(salaryIncome)}`;
     document.getElementById("investment-return-value").innerHTML = `$${commafy(investmentReturnIncome)}`;
+
     document.getElementById("savings-value").innerHTML = `$${commafy(incomeSavings)}`;
     document.getElementById("investments-value").innerHTML = `$${commafy(incomeInvestments)}`;
     document.getElementById("expenses-value").innerHTML = `$${commafy(incomeExpenses)}`;
