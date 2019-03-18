@@ -2,9 +2,6 @@
     font-family: 'caveat';
 }
 
-#user-input input{
-    cursor: pointer;
-}
 
 .input-field{
     display: grid;
