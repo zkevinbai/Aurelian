@@ -2,16 +2,23 @@
     font-family: 'caveat';
 }
 
-
 .input-field{
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 3fr 0.25fr 1fr  0.25fr ;
 }
 
-
-
 .input-field p{
     grid-column: 3;
 }
 
+.input-reset{
+    border: 1px solid;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    border-radius: 15px;
+}
+
+.input-reset:hover{
+    background:  rgb(133, 236, 133);
+}
