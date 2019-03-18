@@ -14,7 +14,7 @@
 .input-field p{
     grid-column: 3;
 
-    font-size: 4.2vh;
+    font-size: 3.14vh;
     font-family: 'roboto';
     font-weight:300;
 }
@@ -26,7 +26,7 @@
     border-radius: 15px;
 
     width: 96.75%;
-    font-size: 4.2vh;
+    font-size: 3.14vh;
     font-family: 'caveat';
 }
 
