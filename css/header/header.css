@@ -17,10 +17,25 @@ header{
 
 .modal-holder-header{
     grid-column: 5;
-    margin-top: 4.5vh;
+    margin-top: 3vh;
     
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: center;
+    justify-items: start;
+}
+
+.modal-holder-howto{
+    grid-column: 1;
+}
+
+.modal-holder-details{
+    grid-column: 2;
+}
+
+.modal-holder-about{
+    grid-column: 3;
 }
 
 .a-link{
@@ -39,13 +54,4 @@ header{
 
 .a-link:hover{
     border-bottom: 2.5px solid rgb(58, 106, 236);
-    font-size: 3.5vh;
-}
-
-.modal-holder-howto{
-    grid-column: 1;
-}
-
-.modal-holder-details{
-    grid-column: 2;
 }
