@@ -20,7 +20,7 @@ header{
     margin-top: 4.5vh;
     
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .a-link{
