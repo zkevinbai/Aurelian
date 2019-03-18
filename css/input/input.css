@@ -20,16 +20,16 @@
 }
 
 .input-reset{
-    border: 1px solid;
-    outline-color: rgba(255, 255, 255, 0);
-    outline-offset: 15px;
     border-radius: 15px;
+    background:  rgb(245,130,49);
+    color: rgb(255, 255, 255);
 
     width: 96.75%;
     font-size: 3.14vh;
-    font-family: 'caveat';
+    font-family: 'roboto';
 }
 
 .input-reset:hover{
-    background:  rgb(133, 236, 133);
+    color:  rgb(245,130,49);
+    background: rgba(245,130,49,0.314);
 }
