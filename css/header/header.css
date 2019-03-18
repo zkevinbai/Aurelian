@@ -1,0 +1,22 @@
+header{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.logo{
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+
+    grid-auto-rows: 50px;
+}
+
+.logo-text-head{
+    grid-column: 2;
+    font-family: "lobster";
+    font-size: 75px;
+}
+
