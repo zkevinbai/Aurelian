@@ -1,0 +1,13 @@
+footer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.modal-holder-footer{
+    grid-column: 5;
+    margin-bottom: 4.5vh;
+    
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+}

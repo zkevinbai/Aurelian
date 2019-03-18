@@ -6,7 +6,6 @@ header{
 
 .logo{
     grid-column: 3;
-
     display: grid;
 }
 
