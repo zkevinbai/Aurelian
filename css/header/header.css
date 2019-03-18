@@ -2,21 +2,26 @@ header{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    
-    height: 100%;
 }
 
 .logo{
     grid-column: 3;
 
     display: grid;
-    height: 100%;
 }
 
 .logo-text-head{
     grid-column: 2;
     font-family: "lobster";
     font-size: 10vh;
+}
+
+.modal-holder-header{
+    grid-column: 5;
+    margin-top: 4.5vh;
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .a-link{
@@ -36,13 +41,6 @@ header{
 .a-link:hover{
     border-bottom: 2.5px solid rgb(58, 106, 236);
     font-size: 3.5vh;
-}
-
-.modal-holder-header{
-    grid-column: 5;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .modal-holder-howto{
