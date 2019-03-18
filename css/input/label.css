@@ -28,11 +28,12 @@ rgb(239, 43, 49)
 }
 
 .label-savings{
-    background: rgba(45, 165, 239, 1)
+    background: rgb(39,201,168);
 }
 
 .label-investments{
-    background: rgba(78, 244, 242, 1);
+    background: rgb(78, 244, 242);
+    background: rgb(56,241,170);
 }
 
 .label-expenses{

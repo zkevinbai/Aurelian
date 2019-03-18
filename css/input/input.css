@@ -1,5 +1,8 @@
 #user-input{
     font-family: 'caveat';
+    font-size: 5vh;
+    /* font-family: 'roboto'; */
+    /* font-size: 4.2vh; */
 }
 
 .input-field{
@@ -10,6 +13,10 @@
 
 .input-field p{
     grid-column: 3;
+
+    font-size: 4.2vh;
+    font-family: 'roboto';
+    font-weight:300;
 }
 
 .input-reset{
