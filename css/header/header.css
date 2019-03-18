@@ -19,6 +19,25 @@ header{
     font-size: 10vh;
 }
 
+.a-link{
+    padding: 5px;
+    padding-top: none;
+
+    font-family: "roboto";
+    font-weight: 300;
+    font-size: 3vh;
+
+    background: rgb(255, 255, 255);
+    color: rgb(58, 106, 236);
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+.a-link:hover{
+    border-bottom: 2.5px solid rgb(58, 106, 236);
+    font-size: 3.5vh;
+}
+
 .modal-holder-header{
     grid-column: 5;
 
