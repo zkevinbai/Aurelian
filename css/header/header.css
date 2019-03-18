@@ -19,3 +19,17 @@ header{
     font-size: 10vh;
 }
 
+.modal-holder-header{
+    grid-column: 5;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.modal-holder-howto{
+    grid-column: 1;
+}
+
+.modal-holder-details{
+    grid-column: 2;
+}
