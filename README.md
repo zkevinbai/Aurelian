@@ -41,9 +41,9 @@ Code Snippets
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
 
 ## JSON to URL
-If the URL is based at the root of a notebook `notebook/:id`, then the create action of a note should send a post request to the backend and then redirect the user to the show/edit of that note at `notebook/:id/note/:noteId`.  
-If the URL is note based at a notebook, the create action of a note should send a patch request to the backend.
+
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
 
 ## URL to Sankey Visualization
 
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
