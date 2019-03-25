@@ -1,2 +1,50 @@
-# Aurelian
-Aurelian is a project built with only Vanilla Javascript, HTML, CSS, and the D3 library.
+Aurelian <img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/favicon.png" alt="Aurelian Logo" align="center" height="50px" />
+======
+
+
+[Aurelian](https://zkevinbai.github.io/Aurelian/) is a frontend only tool designed to help you visualize and forecast your finances.
+
+I built this over the course of 4 days from March 13 to March 17 2019 to improve my Javascript skills.
+
+Technologies
+---
+Aurelian is built with only Vanilla Javascript, HTML, CSS, and the D3 library.
+
+No web frameworks were used, instead, DOM manipulation was used to fetch user input data. 
+
+Design
+---
+Aurelian was designed with a simple theme.  Clarity and elegance, 
+
+Features
+---
+* Encrypted user authentication for signup, login, and logout
+* Protected and Authorized routes for all parts of the app
+* Full Create Update Read and Destroy (CRUD) capabilities for Notes and Notebooks 
+* Rich text editing, photo upload, and video linking for notes
+* Modals to indicate to the user which features are to be built in the future
+
+Feature GIFs
+---
+## Dynamic Update
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/AddPhotos.gif" align="center"/>
+
+## Live Rerender
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/DemoLogin.gif" align="center"/>
+
+## Fully Repositionable Nodes
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/NoteEditing.gif" align="center"/>
+
+Code Snippets
+---
+## Input to JSON
+I made a design decision to base both my splash page and my app at the root URL '/'.  To enable that, my route util needed to be able to detect if the current URL is related to the app or not. 
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
+
+## JSON to URL
+If the URL is based at the root of a notebook `notebook/:id`, then the create action of a note should send a post request to the backend and then redirect the user to the show/edit of that note at `notebook/:id/note/:noteId`.  
+If the URL is note based at a notebook, the create action of a note should send a patch request to the backend.
+<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
+
+## URL to Sankey Visualization
+
