@@ -8,21 +8,20 @@ I built this over the course of 4 days from March 13 to March 17 2019 to improve
 
 Technologies
 ---
-Aurelian is built with only Vanilla Javascript, HTML, CSS, and the D3 library.
+Aurelian is built with only Vanilla Javascript, HTML5, CSS3, and the D3 library.
 
 No web frameworks were used, instead, DOM manipulation was used to fetch user input data. 
 
 Design
 ---
-Aurelian was designed with a simple theme.  Clarity and elegance, 
+Aurelian was designed with a simple theme: Elegance over Complexity.  
+I want the user experience to be seemless and intuitive.
 
 Features
 ---
-* Encrypted user authentication for signup, login, and logout
-* Protected and Authorized routes for all parts of the app
-* Full Create Update Read and Destroy (CRUD) capabilities for Notes and Notebooks 
-* Rich text editing, photo upload, and video linking for notes
-* Modals to indicate to the user which features are to be built in the future
+* Dynamic update of finacial fields next to sliders
+* Live rerender of D3 Sankey visualization on new user input
+* Fully repositionable nodes to allow for easy comparision
 
 Feature GIFs
 ---
@@ -38,7 +37,7 @@ Feature GIFs
 Code Snippets
 ---
 ## Input to JSON
-I made a design decision to base both my splash page and my app at the root URL '/'.  To enable that, my route util needed to be able to detect if the current URL is related to the app or not. 
+
 <img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
 
 ## JSON to URL
