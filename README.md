@@ -36,9 +36,9 @@ Feature GIFs
 
 Code Snippets
 ---
-## Input to JSON
+## Input data to JSON
 
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/RouteUtil.png" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/code/dataFromInput.png" align="center"/>
 
 ## JSON to URL
 
