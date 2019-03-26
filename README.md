@@ -21,18 +21,18 @@ Features
 ---
 * Dynamic update of finacial fields next to sliders
 * Live rerender of D3 Sankey visualization on new user input
-* Fully repositionable nodes to allow for easy comparision
+* Fully repositionable nodes to allow for easy drag and drop comparision
 
 Feature GIFs
 ---
 ## Dynamic Update
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/AddPhotos.gif" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/gifs/dynamicUpdate.gif" align="center"/>
 
 ## Live Rerender
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/DemoLogin.gif" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/gifs/liveRender.gif" align="center"/>
 
 ## Fully Repositionable Nodes
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/gifs/NoteEditing.gif" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/gifs/dragAndDrop.gif" align="center"/>
 
 Code Snippets
 ---
