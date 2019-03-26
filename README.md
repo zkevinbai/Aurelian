@@ -42,8 +42,10 @@ Code Snippets
 
 ## JSON to URL
 
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/code/urlFromJSON.png" align="center"/>
 
 ## URL to Sankey Visualization
 
-<img src="https://github.com/zkevinbai/Augustus/blob/master/public/code/CreateOrEdit.png" align="center"/>
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/code/sankeyP1.png" align="center"/>
+
+<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/code/sankeyP2.png" align="center"/>
