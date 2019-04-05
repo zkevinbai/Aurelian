@@ -19,7 +19,7 @@ header{
 
 .modal-holder-header{
     grid-column: 5;
-    margin-top: 3vh;
+    margin-top: -3vh;
     
     display: grid;
     grid-template-columns: repeat(4, 1fr);
