@@ -47,3 +47,7 @@
     background: #00d9ff;
 }
 
+.modal-link-text{
+    color: blue;
+    text-decoration: underline;
+}
