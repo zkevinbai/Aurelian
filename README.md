@@ -36,6 +36,7 @@ Feature GIFs
 
 Code Snippets
 ---
+
 ## Input data to JSON to generate visualization
 ```js 
 // src/util/eventUtil.js
@@ -94,7 +95,18 @@ export const formReset = () =>{
 
 ## JSON to URL
 
-<img src="https://github.com/zkevinbai/Aurelian/blob/master/assets/code/urlFromJSON.png" align="center"/>
+```js
+// src/generators/urlGenerator.js
+
+function getUrlFromObject(object) {
+    var jsonse = JSON.stringify(object);
+    var blob = new Blob([jsonse], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    return url;
+}
+
+export default getUrlFromObject;
+```
 
 ## URL to Sankey Visualization
 
