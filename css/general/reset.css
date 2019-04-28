@@ -39,6 +39,8 @@ button {
     margin: none; 
     padding: none;
 	background: transparent;
+}
 
+button {
 	-webkit-appearance: none;
 }
