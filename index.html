@@ -22,6 +22,12 @@
                     Aurelian
                 </h1>
             </div>
+            
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
 
             <div class="modal-holder modal-holder-header">
                 <div class="modal-holder-howto" >
@@ -35,12 +41,10 @@
                         <div> 
                             <!-- <a href="/Aurelian" title="Close" class="close">X</a> this is for github pages -->
                             <!-- <a href="/" title="Close" class="close">X</a> -->
-                            <a href="https://zkevinbai.github.io/Aurelian" title="Close" class="close">X</a>
+                            <span onClick="goBack()" title="Close" class="close">X</span>
                             <!-- <p>
                                 Aurelian generates a diagram which maps the flow of your money over the course of a year.
                             </p> -->
-
-                            <h2>How to Use</h2>
 
                             <ol>
                                 <li>
@@ -57,56 +61,35 @@
                     </div>
                 </div>
 
-                <div class="modal-holder-details">
-                    <a 
-                        class="a-link"
-                        href="#details"
-                    >
-                    Details</a>
-                    
-                    <div id="details" class="modalDialog modal-details">
-                        <div> 
-                            <!-- <a href="/Aurelian" title="Close" class="close">X</a> this is for github pages -->
-                            <a href="/" title="Close" class="close">X</a>
-                    
-                            <h2>Details</h2>
-                    
-                            <ul>
-                                <li>
-                                    Aurelian is built with: HTML, CSS, JS, Node, and D3.
-                                </li>
-                                <li>
-                                    No backend, no other libraries such as JQuery or React.
-                                </li>
-                                <li>
-                                    Fully responsive, draging of nodes is even better on mobile.
-                                </li>
-                            </ul>
-
-                            <a href="https://github.com/zkevinbai/Aurelian"
-                                class="modal-link-text"
-                                >Learn More</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="modal-holder-about">
                     <a class="a-link" href="#about">About</a>
                 
                     <div id="about" class="modalDialog modal-about">
                         <div> 
                             <!-- <a href="/Aurelian" title="Close" class="close">X</a> this is for github pages -->
-                            <a href="/" title="Close" class="close">X</a>
-                            
-                            <a href="https://nature.berkeley.edu/news/2018/01/student-spotlight-kevin-bai/"
-                                class="modal-link-text"
-                                >About Me</a>
-                            <a href="https://linkedin.com/in/kevinbai/"
-                                class="modal-link-text"
-                                >Get in Touch</a>
-                            <a href="https://github.com/zkevinbai" 
-                                class="modal-link-text"
-                                >Github</a>
+                            <span onClick="goBack()" title="Close" class="close">X</span>
+
+                            <ul>
+                                <li>
+                                    Aurelian is built with: HTML, CSS, Vanilla JS, and D3.
+                                </li>
+                                <li>
+                                    There is no backend to Aurelian, and no other libraries such as JQuery or React.
+                                </li>
+                                <li>
+                                    Aurelian is fully responsive, the experience of draging nodes is even better on mobile.
+                                </li>
+                            </ul>
+
+                            <span>
+                                <a href="https://linkedin.com/in/zkevinbai/"
+                                    class="modal-link-text"
+                                    >About Me</a>
+                                <a href="https://github.com/zkevinbai/Aurelian" 
+                                    class="modal-link-text"
+                                    style="margin-left: 1rem"
+                                    >Github</a>
+                            </span>
                         </div>
                     </div>
                 </div>
