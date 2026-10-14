@@ -1,7 +1,5 @@
 
-// import * as d3 from 'd3';
-
-const d3 = window.d3;
+import * as d3 from 'd3';
 
 export default (url) => {
 var units = "dollars";
@@ -42,7 +40,7 @@ var svg = d3.select(".visualization").append("svg")
         "translate(" + margin.left + "," + margin.top + ")");
 
 // Set the sankey diagram properties
-var sankey = d3.sankey()
+var sankey = sankeyLayout()
     .nodeWidth(36)
     .nodePadding(40)
     .size([width, height]);
@@ -65,7 +63,7 @@ const strokeColor = [
 
 // load the data
 // d3.json('./src/data/data.json', function (error, graph) {
-d3.json(url, function (error, graph) {
+d3.json(url).then(function (graph) {
     var nodeMap = {};
     graph.nodes.forEach(function (x) { nodeMap[x.name] = x; });
     graph.links = graph.links.map(function (x) {
@@ -108,7 +106,7 @@ d3.json(url, function (error, graph) {
             return "translate(" + d.x + "," + d.y + ")";
         })
         .call(d3.drag()
-            .subject(function (d) {
+            .subject(function (event, d) {
                 return d;
             })
             .on("start", function () {
@@ -148,22 +146,24 @@ d3.json(url, function (error, graph) {
         .attr("text-anchor", "start");
 
     // the function for moving the nodes
-    function dragmove(d) {
+    function dragmove(event, d) {
         d3.select(this)
             .attr("transform",
                 "translate(" + (
-                    d.x = Math.max(0, Math.min(width - d.dx, d3.event.x))
+                    d.x = Math.max(0, Math.min(width - d.dx, event.x))
                 )
                 + "," + (
-                    d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))
+                    d.y = Math.max(0, Math.min(height - d.dy, event.y))
                 ) + ")");
         sankey.relayout();
         link.attr("d", path);
     }
+}).catch(function (error) {
+    console.error(error);
 });
 }
 
-d3.sankey = function () {
+function sankeyLayout() {
     var sankey = {},
         nodeWidth = 24,
         nodePadding = 8,
@@ -320,11 +320,9 @@ d3.sankey = function () {
     }
 
     function computeNodeDepths(iterations) {
-        var nodesByBreadth = d3.nest()
-            .key(function (d) { return d.x; })
-            .sortKeys(d3.ascending)
-            .entries(nodes)
-            .map(function (d) { return d.values; });
+        var nodesByBreadth = d3.groups(nodes, function (d) { return d.x; })
+            .sort(function (a, b) { return d3.ascending(a[0], b[0]); })
+            .map(function (d) { return d[1]; });
 
         //
         initializeNodeDepth();
@@ -456,4 +454,4 @@ d3.sankey = function () {
     }
 
     return sankey;
-};
+}
